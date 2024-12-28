@@ -11,6 +11,7 @@ import Button from '../components/Button.jsx';
 import AppleFace from "../assets/AppleFace.png";
 import MeHello from "../assets/mehellowing.png";
 import API_image from "../assets/API.svg"
+import cybersecurity from "../assets/cybersecurity.jpg"
 const ServiceCard = ({ index, title, icon }) => (
     <Tilt className='xs:w-[250px] w-full'>
         <motion.div
@@ -112,8 +113,7 @@ const About = () => {
 
                     <div className="xl:col-span-2 xl:row-span-3">
                         <div className="grid-container">
-                            <img src="src\assets\cybersecurity.jpg" className="sm:h-[266px] h-fit object-contain w-full sm:w-[75%] lg:w-[100%]" />
-
+                            <img src={cybersecurity} />
                             <div>
                                 <p className="grid-headtext">My Passion for Coding</p>
                                 <p className="grid-subtext">
@@ -140,7 +140,7 @@ const About = () => {
                             <div className="space-y-2">
                                 <p className="grid-subtext text-center text-white ">Contact me!</p>
                                 <div className="copy-container" onClick={handleCopy}>
-                                    <img src={hasCopied ? 'src/assets/tick.svg' : 'src/assets/copy.svg'} alt="copy"   />
+                                    <img src={hasCopied ? 'src/assets/tick.svg' : 'src/assets/copy.svg'} alt="copy" />
                                     <p className="lg:text-2xl md:text-xl font-medium text-gray_gradient text-white"> samuelha120@gmail.com</p>
                                 </div>
                             </div>
@@ -159,7 +159,7 @@ const About = () => {
             </div>
         </>
     );
-    
+
 };
 
 export default SectionWrapper(About, "about");
