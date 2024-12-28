@@ -112,7 +112,7 @@ const About = () => {
 
                     <div className="xl:col-span-2 xl:row-span-3">
                         <div className="grid-container">
-                            <img src="src\assets\cybersecurity.jpg" alt="grid-3" className="w-full sm:h-[266px] object-contain sm:w-[75%] lg:w-[90%] h-auto" />
+                            <img src="src\assets\cybersecurity.jpg" alt="grid-3" className="sm:h-[266px] h-fit object-contain w-full sm:w-[75%] lg:w-[90%]" />
 
                             <div>
                                 <p className="grid-headtext">My Passion for Coding</p>
