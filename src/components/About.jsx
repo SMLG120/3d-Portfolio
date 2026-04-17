@@ -91,7 +91,7 @@ const About = () => {
                             />
                             <div>
                                 <p className="grid-headtext text-xl sm:text-2xl md:text-3xl lg:text-4xl">
-                                    Tech Stack
+                                    Software and Security
                                 </p>
                                 <p className="grid-subtext text-sm sm:text-base md:text-lg lg:text-xl">
                                     I specialize in a variety of languages, frameworks, and tools that allow me to build robust and scalable

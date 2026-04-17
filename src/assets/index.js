@@ -41,6 +41,10 @@ import carrent from "./carrent.png";
 import jobit from "./jobit.png";
 import osProject from "./osProject.png";
 
+import stock from "./stock.png";
+import aiwaf from "./aiwaf.png";
+import recmovie from "./recmovie.png";
+
 export {
   logo,
   backend,
@@ -79,4 +83,7 @@ export {
   carrent,
   jobit,
   osProject as osProject,
+  stock as stock,
+  aiwaf as aiwaf,
+  recmovie as recmovie
 };

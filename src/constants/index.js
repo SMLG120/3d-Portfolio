@@ -31,6 +31,9 @@ import {
   carrent,
   jobit,
   osProject,
+  stock,
+  aiwaf,
+  recmovie,
   threejs,
 } from "../assets";
 
@@ -129,6 +132,18 @@ const technologies = [
 
 const experiences = [
   {
+    title: "Software Developer Intern",
+    company_name: "Attestra",
+    icon: attestra,
+    iconBg: "#E6DEDD",
+    date: "May 2025 - Aug 2025",
+    points: [
+      "Hardened PHP data-extraction pipelines with strict input sanitization against the DairyTrace & SimpliTrace, preventing malformed data ingestion and improving regulatory reporting accuracy.",
+      "Automated livestock traceability workflows via PHP scripting and scheduled jobs, eliminating manual data handoffs and reducing manual effort by 60%.",
+      "Debugged and resolved critical backend issues (around 50 bugs) across jQuery, Oracle SQL, and Zend PHP, cutting system cleanup time by 50%; refactored CI/CD pipelines and optimized SQL queries, reducing build-to-deploy time by 25%."
+    ],
+  },
+  {
     title: "Full-Stack Developer Intern",
     company_name: "Attestra",
     icon: attestra,
@@ -210,58 +225,58 @@ const testimonials = [
 
 const projects = [
   {
-    name: "Soundify",
+    name: "AI Threat Web Application Firewall",
     description:
-      "Soundify is a web app that allows users to search for and listen to music. It uses the MongoDB to store music data and the API to fetch music data and provides a simple interface for users to search for and play music.",
+      "Developed a real-time threat detection system for HTTP traffic, combining a Regex-based rule engine (inspired by ModSecurity)",
     tags: [
       {
         name: "TypeScript/JavaScript",
         color: "blue-text-gradient",
       },
       {
-        name: "tailwindcss",
+        name: "ML",
         color: "green-text-gradient",
       },
       {
-        name: "MongoDB",
+        name: "React",
         color: "pink-text-gradient",
       },
     ],
-    image: jobit,
-    source_code_link: "https://github.com/SMLG120/Soundify",
+    image: aiwaf,
+    source_code_link: "https://github.com/SMLG120/AI-Threat-Detector",
   },
   {
-    name: "GroCheap",
+    name: "Recommendation Movie ML",
     description:
-      "The economy sucks, and EVERYONE's complaining about grocery prices being sky-high! So, where the heck do you shop for cheap stuff? By scraping the web for grocery prices, we store them in a database and then can fetch them at any time to check for prices.",
+      "Team Project building a content-based XGBoost recommender system serving 1M+ users across 27K movies, deployed as a Dockerized Flask REST API consuming real-time Kafka event streams for live user activity ingestion.",
     tags: [
       {
-        name: "react",
+        name: "python",
         color: "blue-text-gradient",
       },
       {
-        name: "fastapi",
+        name: "docker",
         color: "green-text-gradient",
       },
       {
-        name: "selenium",
+        name: "GitLab CI/CD",
         color: "pink-text-gradient",
       },
     ],
-    image: grocheap,
-    source_code_link: "https://github.com/dyune/grocheap-project",
+    image: recmovie,
+    source_code_link: "https://github.com/SMLG120/Movie-Recommender-System",
   },
   {
-    name: "Simulated Command Shell",
+    name: "Stock App",
     description:
-      "Along with a colleague from COMP310 class, we made a simulated command shell that required some operating systems knowledge, such as processes, memory management, scheduling policies, multithreading, paging infrastructures, etc...",
+      "Building a real-time stock market app with live prices, search, personalized alerts, interactive charts, AI-powered insights, daily news summary, watchlists, powered by Next.js, Better Auth, and Inngest for seamless automation.",
     tags: [
       {
-        name: "C programming",
+        name: "TypeScript programming",
         color: "blue-text-gradient",
       },
       {
-        name: "GitLab",
+        name: "Inngest",
         color: "green-text-gradient",
       },
       {
@@ -269,8 +284,8 @@ const projects = [
         color: "pink-text-gradient",
       },
     ],
-    image: osProject,
-    source_code_link: "https://github.com/SMLG120/Projects/tree/main/OS",
+    image: stock,
+    source_code_link: "https://github.com/SMLG120/Stock-App-Tracker",
   },
 ];
 
