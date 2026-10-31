@@ -45,6 +45,7 @@ import stock from "./stock.png";
 import aiwaf from "./aiwaf.png";
 import recmovie from "./recmovie.png";
 import cybersecurity from "./cybersecurity.jpg";
+import grid4 from "./grid4.png";
 
 export {
   logo,
@@ -88,4 +89,5 @@ export {
   aiwaf as aiwaf,
   recmovie as recmovie,
   cybersecurity as cybersecurity,
+  grid4 as grid4,
 };

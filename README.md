@@ -1,51 +1,101 @@
-# 3d-Portfolio
+# Samuel Ha — Portfolio
 
-A React + Vite portfolio project with 3D canvas scenes powered by `@react-three/fiber`, `three`, and interactive UI components.
+Personal portfolio website built with React, Vite, and Three.js.
 
-## Prerequisites
+**Live:** [samuel-ha-portfolio.onrender.com](https://samuel-ha-portfolio.onrender.com/)
 
-- Node.js 18+ or a compatible version
-- npm (or Yarn/PNPM if you prefer, but these instructions use npm)
+---
 
-## Install dependencies
+## Tech Stack
+
+- **Framework:** React 18 + Vite
+- **3D:** Three.js via `@react-three/fiber` and `@react-three/drei`
+- **Styling:** Tailwind CSS
+- **Animation:** Framer Motion
+- **Contact form:** EmailJS
+- **Deployment:** Render (auto-deploy from `main`)
+
+---
+
+## Local Development
 
 ```bash
 npm install
+npm run dev       # http://localhost:5173
 ```
-
-## Run locally
 
 ```bash
-npm run dev
+npm run build     # production build → dist/
+npm run preview   # preview production build locally
+npm run lint      # ESLint
 ```
 
-Then open the local development URL shown in the terminal, typically:
+---
+
+## CV / Resume
+
+The LaTeX source is at `public/resume.tex`. To compile it into `public/resume.pdf`:
 
 ```bash
-http://localhost:5173
+# 1. Install BasicTeX (one-time, requires sudo)
+sudo brew install --cask basictex
+
+# 2. Install required LaTeX packages (one-time)
+sudo tlmgr update --self
+sudo tlmgr install extarticles psnfss titlesec enumitem microtype
+
+# 3. Compile
+cd public
+pdflatex resume.tex
 ```
 
-## Build for production
+Once `public/resume.pdf` exists, the "Download CV" button on the hero section will serve the file directly. Until then, clicking it redirects to LinkedIn.
 
-```bash
-npm run build
+---
+
+## Project Structure
+
+```
+src/
+  assets/          images, icons, company logos, tech logos
+  components/
+    canvas/        Three.js 3D scenes (desktop PC, Earth, stars, tech balls)
+    About.jsx      intro grid with globe
+    Contact.jsx    email form + Earth canvas
+    Experience.jsx vertical timeline
+    Hero.jsx       landing section with 3D desktop
+    Navbar.jsx     fixed nav with scroll-spy
+    Tech.jsx       spinning 3D tech ball icons
+    Works.jsx      project cards
+  constants/       all site content (projects, experiences, nav links)
+  hoc/             SectionWrapper animation HOC
+  utils/           Framer Motion variants
+public/
+  desktop_pc/      3D model (GLTF)
+  planet/          3D model (GLTF)
+  resume.tex       LaTeX CV source
+  resume.pdf       compiled CV (compile locally — see above)
 ```
 
-## Preview production build
+---
 
-```bash
-npm run preview
+## Deployment
+
+Render auto-deploys from the `main` branch on GitHub.
+
+- **Build command:** `npm run build`
+- **Publish directory:** `dist`
+
+Push to `main` to trigger a redeploy.
+
+---
+
+## Content Updates
+
+All portfolio content (projects, experiences, technologies, nav links) lives in a single file:
+
+```
+src/constants/index.js
 ```
 
-## Available scripts
-
-- `npm run dev` — start the Vite dev server
-- `npm run build` — create a production build
-- `npm run preview` — serve the built app locally for preview
-- `npm run lint` — run ESLint across the project
-
-## Notes
-
-- The app uses Vite with React and Tailwind CSS.
-- 3D scenes are located under `src/components/canvas`.
-- Contact/email functionality depends on `@emailjs/browser`.
+Edit that file to update any section. The components read from it automatically.

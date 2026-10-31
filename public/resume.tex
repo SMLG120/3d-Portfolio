@@ -1,0 +1,103 @@
+\documentclass[letterpaper,9pt]{extarticle}
+
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{mathptmx}
+\usepackage[scaled=0.92]{helvet}
+\usepackage[margin=0.45in]{geometry}
+\usepackage{titlesec}
+\usepackage{enumitem}
+\usepackage[hidelinks]{hyperref}
+\usepackage{microtype}
+\input{glyphtounicode}
+\pdfgentounicode=1
+
+\pagestyle{empty}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{0pt}
+\raggedbottom
+\urlstyle{same}
+
+% Section headings: sans-serif caps with a rule
+\titleformat{\section}{\sffamily\normalsize\raggedright}{}{0em}{\MakeUppercase}[\vspace{-7pt}\rule{\textwidth}{0.5pt}]
+\titlespacing*{\section}{0pt}{6pt}{1.5pt}
+
+% Bullets
+\setlist[itemize]{leftmargin=0.22in,itemsep=0.5pt,parsep=0pt,topsep=1pt,partopsep=0pt,label=\textbullet}
+
+% Entry: bold title + right date, italic subline + right location
+\newcommand{\entry}[4]{%
+  \vspace{1.5pt}\noindent\textbf{#1}\hfill\textbf{#2}\\[-1pt]
+  \noindent\textit{#3}\hfill\textit{#4}\par\vspace{-1pt}}
+
+\begin{document}
+\fontsize{9.5}{11.4}\selectfont
+
+\begin{center}
+  {\sffamily\fontsize{22}{24}\selectfont Samuel Ha}\\[3pt]
+  {\sffamily\small
+  Montreal, QC $|$ (438) 630-1855 $|$
+  \href{mailto:samuelha120@gmail.com}{samuelha120@gmail.com} $|$
+  \href{https://www.linkedin.com/in/samuel-ha-551644322/}{LinkedIn} $|$
+  \href{https://github.com/SMLG120}{GitHub} $|$
+  \href{https://tryhackme.com/p/smlg120}{TryHackMe} $|$
+  \href{https://samuel-ha-portfolio.onrender.com}{Portfolio}}
+\end{center}
+\vspace{-6pt}
+
+\section{Education}
+\entry{B.Sc. Computer Science, Concentration in Artificial Intelligence}{Aug 2023 -- Present}{McGill University}{Montreal, QC}
+
+\section{Technical Skills}
+\textbf{Languages:} Python, Java, C, SQL, TypeScript, JavaScript, PHP, HTML/CSS\\
+\textbf{Security:} web application security (SQLi, XSS, SSRF, path traversal, CORS), threat detection, input validation/sanitization, RBAC, JWT/OIDC, Keycloak\\
+\textbf{Backend \& Web:} Spring Boot, FastAPI, Flask, Symfony, API Platform, React, Next.js, REST APIs, Kafka, Celery, WebSockets\\
+\textbf{Databases:} PostgreSQL, Oracle SQL, MongoDB, Redis, DB2, Supabase\\
+\textbf{Tools \& Platforms:} Git, Unix, GitLab CI/CD, GitHub Actions, Docker, AWS, Nginx, Prometheus, Grafana, Linux, Jira
+
+\section{Projects}
+\entry{AI-WAF -- AI-Powered Web Application Firewall}{Winter 2026}{Python, FastAPI, React, Docker, Scikit-learn, PostgreSQL}{}
+\begin{itemize}
+  \item Built a real-time HTTP threat-detection system pairing a regex rule engine with an \textbf{ML ensemble} (Isolation Forest, Random Forest, Autoencoder) over 30 engineered features to flag SQLi, XSS, SSRF, and path traversal.
+  \item Streamed live classifications over \textbf{WebSockets} to a dashboard; containerized with \textbf{Docker Compose}.
+\end{itemize}
+
+\entry{Enterprise SIEM Platform -- Detection \& Incident Management}{Fall 2026}{Java 21, Spring Boot, Kafka, PostgreSQL, Redis, Keycloak, OpenSearch, React, TypeScript}{}
+\begin{itemize}
+  \item Architected a \textbf{Spring Boot microservices} SIEM that streams events over \textbf{Kafka} to a rules engine, generates alerts, and correlates them into incidents; persisted in \textbf{PostgreSQL}, searchable via \textbf{OpenSearch}.
+  \item Secured with \textbf{Keycloak OIDC/JWT}, RBAC, and \textbf{Redis} rate limiting; added \textbf{Prometheus/Grafana} monitoring, \textbf{Kubernetes/Helm} deployment, and a \textbf{React} dashboard.
+\end{itemize}
+
+\entry{FinTech Transaction Platform}{Fall 2026}{Java, Spring Boot, Kafka, PostgreSQL, Keycloak, Docker, Kubernetes}{}
+\begin{itemize}
+  \item Designed a \textbf{9-service Spring Boot} payment platform, each service with its own \textbf{PostgreSQL} database and asynchronous \textbf{Kafka} messaging; deployed with \textbf{Kubernetes/Helm}.
+  \item Implemented card tokenization (no PAN/CVV stored), encrypted PII at rest, an idempotent \textbf{double-entry ledger}, and \textbf{Keycloak JWT} auth with 5 RBAC roles; validated with contract and lifecycle tests.
+\end{itemize}
+
+\section{Experience}
+\entry{Software Developer Intern}{July 2026 -- Sept 2026}{Attestra (Union des producteurs agricoles)}{Longueuil, QC}
+\begin{itemize}
+  \item Fixed backend defects on the \textbf{DairyTrace} and \textbf{SimpliTrace} platforms, tracing issues to root cause; submitted \textbf{Git} pull requests in code reviews.
+  \item Built dynamic \textbf{PDF generation} in \textbf{PHP} with custom client-specific report layouts.
+\end{itemize}
+
+\entry{Software Developer Intern}{May 2025 -- Aug 2025}{Attestra (Union des producteurs agricoles)}{Longueuil, QC}
+\begin{itemize}
+  \item Added \textbf{input validation and sanitization} to PHP data-extraction pipelines, preventing malformed data ingestion and improving regulatory reporting accuracy.
+  \item Automated livestock traceability workflows with \textbf{PHP} scripts and scheduled jobs, cutting manual effort by \textbf{60\%}.
+  \item Resolved roughly \textbf{50 backend bugs} across \textbf{jQuery, Oracle SQL, and Zend PHP}, reducing system cleanup time by \textbf{50\%}.
+  \item Optimized \textbf{SQL queries} and refactored \textbf{CI/CD pipelines}, reducing build-to-deploy time by \textbf{25\%}.
+\end{itemize}
+
+\entry{Full-Stack Developer Intern}{June 2024 -- Aug 2024}{Attestra (Union des producteurs agricoles)}{Longueuil, QC}
+\begin{itemize}
+  \item Built access-controlled \textbf{RESTful APIs} with \textbf{Symfony and API Platform} (CORS, XSS prevention), cutting cross-team integration risk by \textbf{20\%}.
+  \item Refactored \textbf{React Admin} components, cutting navigation latency by \textbf{30\%} and reducing client-side data exposure.
+\end{itemize}
+
+\section{Leadership \& Languages}
+\textbf{McGill CS Mentorship Program, Mentor} -- guided first-year students in algorithms, Git, and interview prep \hfill \textbf{2024 -- 2025}\\
+\textbf{Tech Fair Volunteer, McGill University} -- coordinated logistics for a 200+ attendee technology showcase\\
+\textbf{Spoken Languages:} English (Fluent), French (Fluent), Cantonese (Conversational), Mandarin (Basic), Spanish (Basic)
+
+\end{document}

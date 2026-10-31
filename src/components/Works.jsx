@@ -8,6 +8,25 @@ import { SectionWrapper } from "../hoc";
 import { projects } from "../constants";
 import { fadeIn, textVariant } from "../utils/motion";
 
+// Inline external-link SVG (no new dependency needed)
+const ExternalLinkIcon = () => (
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    width="16"
+    height="16"
+    viewBox="0 0 24 24"
+    fill="none"
+    stroke="currentColor"
+    strokeWidth="2.5"
+    strokeLinecap="round"
+    strokeLinejoin="round"
+  >
+    <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6" />
+    <polyline points="15 3 21 3 21 9" />
+    <line x1="10" y1="14" x2="21" y2="3" />
+  </svg>
+);
+
 const ProjectCard = ({
   index,
   name,
@@ -15,48 +34,56 @@ const ProjectCard = ({
   tags,
   image,
   source_code_link,
+  demo_link,
 }) => {
   return (
     <motion.div variants={fadeIn("up", "spring", index * 0.5, 0.75)}>
       <Tilt
-        options={{
-          max: 45,
-          scale: 1,
-          speed: 450,
-        }}
-        className='bg-tertiary p-5 rounded-2xl sm:w-[360px] w-full'
+        options={{ max: 45, scale: 1, speed: 450 }}
+        className="bg-tertiary p-5 rounded-2xl sm:w-[360px] w-full"
       >
-        <div className='relative w-full h-[230px]'>
+        <div className="relative w-full h-[230px]">
           <img
             src={image}
-            alt='project_image'
-            className='w-full h-full object-cover rounded-2xl'
+            alt={name}
+            className="w-full h-full object-cover rounded-2xl"
           />
 
-          <div className='absolute inset-0 flex justify-end m-3 card-img_hover'>
+          {/* Action buttons overlay */}
+          <div className="absolute inset-0 flex justify-end items-start gap-2 m-3 card-img_hover">
+            {demo_link && (
+              <div
+                onClick={() => window.open(demo_link, "_blank")}
+                className="black-gradient w-10 h-10 rounded-full flex justify-center items-center cursor-pointer text-white hover:scale-110 transition-transform"
+                title="Live Demo"
+              >
+                <ExternalLinkIcon />
+              </div>
+            )}
             <div
               onClick={() => window.open(source_code_link, "_blank")}
-              className='black-gradient w-10 h-10 rounded-full flex justify-center items-center cursor-pointer'
+              className="black-gradient w-10 h-10 rounded-full flex justify-center items-center cursor-pointer hover:scale-110 transition-transform"
+              title="View Source"
             >
               <img
                 src={github}
-                alt='source code'
-                className='w-1/2 h-1/2 object-contain'
+                alt="source code"
+                className="w-1/2 h-1/2 object-contain"
               />
             </div>
           </div>
         </div>
 
-        <div className='mt-5'>
-          <h3 className='text-white font-bold text-[24px]'>{name}</h3>
-          <p className='mt-2 text-secondary text-[14px]'>{description}</p>
+        <div className="mt-5">
+          <h3 className="text-white font-bold text-[20px] leading-tight">{name}</h3>
+          <p className="mt-2 text-secondary text-[14px] leading-relaxed">{description}</p>
         </div>
 
-        <div className='mt-4 flex flex-wrap gap-2'>
+        <div className="mt-4 flex flex-wrap gap-2">
           {tags.map((tag) => (
             <p
               key={`${name}-${tag.name}`}
-              className={`text-[14px] ${tag.color}`}
+              className={`text-[13px] font-medium ${tag.color}`}
             >
               #{tag.name}
             </p>
@@ -71,22 +98,23 @@ const Works = () => {
   return (
     <>
       <motion.div variants={textVariant()}>
-        <p className={`${styles.sectionSubText} `}>My work</p>
+        <p className={`${styles.sectionSubText}`}>My work</p>
         <h2 className={`${styles.sectionHeadText}`}>Projects</h2>
       </motion.div>
 
-      <div className='w-full flex'>
+      <div className="w-full flex">
         <motion.p
           variants={fadeIn("", "", 0.1, 1)}
-          className='mt-3 text-secondary text-[17px] max-w-3xl leading-[30px]'
+          className="mt-3 text-secondary text-[17px] max-w-3xl leading-[30px]"
         >
-          A selection of personal and academic projects spanning AI security, backend microservices,
-          and machine learning. Each project reflects real engineering decisions around architecture,
-          security, and system design. Click the GitHub icon to explore the source code.
+          A selection of personal and academic projects spanning AI security, backend
+          microservices, and machine learning. Each reflects real engineering decisions
+          around architecture, security, and system design. Click the{" "}
+          <span className="text-white">GitHub icon</span> to explore the source code.
         </motion.p>
       </div>
 
-      <div className='mt-20 flex flex-wrap gap-7'>
+      <div className="mt-20 flex flex-wrap gap-7">
         {projects.map((project, index) => (
           <ProjectCard key={`project-${index}`} index={index} {...project} />
         ))}

@@ -24,6 +24,8 @@ import {
   aiwaf,
   recmovie,
   cybersecurity,
+  grid4,
+  stock,
   backend as fintech,
   threejs,
 } from "../assets";
@@ -223,6 +225,30 @@ const projects = [
     ],
     image: recmovie,
     source_code_link: "https://github.com/SMLG120/Movie-Recommender-System",
+  },
+  {
+    name: "World Cup Intelligence Platform",
+    description:
+      "Full-stack football prediction platform for World Cup 2026. Five ML models (XGBoost, LightGBM, CatBoost, Random Forest, Logistic Regression) combined with Poisson scoring and Monte Carlo tournament simulation. Automated ETL pipeline ingests Elo ratings and FIFA rankings; SHAP explainability integrated throughout.",
+    tags: [
+      { name: "Python / FastAPI", color: "blue-text-gradient" },
+      { name: "Next.js / TypeScript", color: "green-text-gradient" },
+      { name: "XGBoost / Monte Carlo", color: "pink-text-gradient" },
+    ],
+    image: grid4,
+    source_code_link: "https://github.com/SMLG120/World-Cup-Intelligence-Platform",
+  },
+  {
+    name: "Stock App Tracker",
+    description:
+      "Next.js 15 stock tracking app with secure authentication via Better Auth (JWT), MongoDB persistence with Mongoose, and Inngest for event-driven background jobs including scheduled data refreshes and user alert pipelines.",
+    tags: [
+      { name: "Next.js / TypeScript", color: "blue-text-gradient" },
+      { name: "MongoDB / Mongoose", color: "green-text-gradient" },
+      { name: "Inngest / Better Auth", color: "pink-text-gradient" },
+    ],
+    image: stock,
+    source_code_link: "https://github.com/SMLG120/Stock-App-Tracker",
   },
 ];
 
