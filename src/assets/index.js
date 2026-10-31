@@ -46,6 +46,8 @@ import aiwaf from "./aiwaf.png";
 import recmovie from "./recmovie.png";
 import cybersecurity from "./cybersecurity.jpg";
 import grid4 from "./grid4.png";
+import worldcup from "./worldcup.png";
+import fintech from "./fintech.jpg";
 
 export {
   logo,
@@ -90,4 +92,6 @@ export {
   recmovie as recmovie,
   cybersecurity as cybersecurity,
   grid4 as grid4,
+  worldcup as worldcup,
+  fintech as fintech,
 };

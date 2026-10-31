@@ -24,9 +24,9 @@ import {
   aiwaf,
   recmovie,
   cybersecurity,
-  grid4,
+  worldcup,
   stock,
-  backend as fintech,
+  fintech,
   threejs,
 } from "../assets";
 

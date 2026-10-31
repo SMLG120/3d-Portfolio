@@ -71,7 +71,7 @@ const About = () => {
                             />
                             <div>
                                 <p className="grid-headtext text-xl sm:text-2xl md:text-3xl lg:text-4xl">
-                                    Hi, I’m Samuel Ha
+                                    Hi, I’m Samuel
                                 </p>
                                 <p className="grid-subtext text-sm sm:text-base md:text-lg lg:text-xl">
                                     CS student at McGill University (AI concentration) with hands-on experience
