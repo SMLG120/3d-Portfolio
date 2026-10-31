@@ -235,7 +235,7 @@ const projects = [
       { name: "Next.js / TypeScript", color: "green-text-gradient" },
       { name: "XGBoost / Monte Carlo", color: "pink-text-gradient" },
     ],
-    image: grid4,
+    image: worldcup,
     source_code_link: "https://github.com/SMLG120/World-Cup-Intelligence-Platform",
   },
   {
