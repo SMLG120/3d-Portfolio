@@ -1,5 +1,4 @@
 import { motion } from "framer-motion";
-
 import { styles } from "../styles";
 import { ComputersCanvas } from "./canvas";
 
@@ -7,7 +6,7 @@ const Hero = () => {
   return (
     <section className={`relative w-full h-screen mx-auto`}>
       <div
-        className={`absolute inset-0 top-[120px]  max-w-7xl mx-auto ${styles.paddingX} flex flex-row items-start gap-5`}
+        className={`absolute inset-0 top-[120px] max-w-7xl mx-auto ${styles.paddingX} flex flex-row items-start gap-5`}
       >
         <div className='flex flex-col justify-center items-center mt-5'>
           <div className='w-5 h-5 rounded-full bg-[#915EFF]' />
@@ -16,12 +15,40 @@ const Hero = () => {
 
         <div>
           <h1 className={`${styles.heroHeadText} text-white`}>
-            Hi, I'm <span className='text-[#915EFF]'>Samuel</span>
+            Hi, I'm <span className='text-[#915EFF]'>Samuel Ha</span>
           </h1>
           <p className={`${styles.heroSubText} mt-2 text-white-100`}>
-            I'm a Computer Science Student At McGill<br className='sm:block hidden' />
-            Looking for internships and jobs
+            Software Engineer{" "}
+            <span className="text-[#915EFF]">|</span>{" "}
+            AI &amp; Cybersecurity
+            <br className='sm:block hidden' />
+            <span className="text-[17px] text-[#aaa8c2]">
+              CS Student @ McGill · Building reliable, intelligent, and secure systems
+            </span>
           </p>
+
+          <div className="mt-8 flex flex-wrap gap-4">
+            <a
+              href="#projects"
+              className="px-6 py-3 bg-[#915EFF] text-white font-semibold rounded-lg hover:bg-[#7a4fd6] transition-colors duration-200"
+            >
+              View Projects
+            </a>
+            <a
+              href="/resume.pdf"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="px-6 py-3 border border-[#915EFF] text-[#915EFF] font-semibold rounded-lg hover:bg-[#915EFF] hover:text-white transition-colors duration-200"
+            >
+              Download CV
+            </a>
+            <a
+              href="#contact"
+              className="px-6 py-3 border border-[#aaa8c2] text-[#aaa8c2] font-semibold rounded-lg hover:border-white hover:text-white transition-colors duration-200"
+            >
+              Contact Me
+            </a>
+          </div>
         </div>
       </div>
 

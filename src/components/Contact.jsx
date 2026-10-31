@@ -6,11 +6,6 @@ import { styles } from '../styles'
 import { EarthCanvas } from './canvas'
 import { SectionWrapper } from '../hoc'
 import { slideIn } from '../utils/motion'
-import { div } from 'framer-motion/client'
-
-// MEmeSsJYNgXCmZ-Mb
-// template_3n8sk5m
-// service_fegxbqk
 
 const Contact = () => {
   const formRef = useRef();
@@ -67,6 +62,42 @@ const Contact = () => {
         <p className={styles.sectionSubText}> Get in touch</p>
         <h3 className={styles.sectionHeadText}>Contact Me!</h3>
 
+        <div className="mt-4 flex gap-6">
+          <a
+            href="mailto:samuelha120@gmail.com"
+            className="text-secondary hover:text-white transition-colors"
+            aria-label="Email"
+          >
+            samuelha120@gmail.com
+          </a>
+        </div>
+        <div className="mt-2 flex gap-6">
+          <a
+            href="https://github.com/SMLG120"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-[#915EFF] hover:text-white transition-colors font-medium"
+          >
+            GitHub
+          </a>
+          <a
+            href="https://www.linkedin.com/in/samuel-ha-551644322/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-[#915EFF] hover:text-white transition-colors font-medium"
+          >
+            LinkedIn
+          </a>
+          <a
+            href="https://tryhackme.com/p/smlg120"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-[#915EFF] hover:text-white transition-colors font-medium"
+          >
+            TryHackMe
+          </a>
+        </div>
+
         <form ref={formRef}
           onSubmit={handleSubmit}
           className="mt-12 flex flex-col gap-8"
@@ -108,9 +139,7 @@ const Contact = () => {
             />
           </label>
 
-          <button type="submit" jclassName="bg-tertiary py-3 px-8
-          outline-none w-fit text-white
-          font-bold shadow-md shadow-primary rounded-xl">
+          <button type="submit" className="bg-tertiary py-3 px-8 outline-none w-fit text-white font-bold shadow-md shadow-primary rounded-xl hover:bg-[#7a4fd6] transition-colors duration-200">
             {loading ? 'Sending...' : 'Send'}
           </button>
         </form>

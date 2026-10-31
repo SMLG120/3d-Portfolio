@@ -44,6 +44,7 @@ import osProject from "./osProject.png";
 import stock from "./stock.png";
 import aiwaf from "./aiwaf.png";
 import recmovie from "./recmovie.png";
+import cybersecurity from "./cybersecurity.jpg";
 
 export {
   logo,
@@ -85,5 +86,6 @@ export {
   osProject as osProject,
   stock as stock,
   aiwaf as aiwaf,
-  recmovie as recmovie
+  recmovie as recmovie,
+  cybersecurity as cybersecurity,
 };

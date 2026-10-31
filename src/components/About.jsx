@@ -74,8 +74,9 @@ const About = () => {
                                     Hi, I’m Samuel Ha
                                 </p>
                                 <p className="grid-subtext text-sm sm:text-base md:text-lg lg:text-xl">
-                                    With 3 years of coding experience, I have honed my skills in both frontend and backend development,
-                                    creating dynamic and responsive websites.
+                                    CS student at McGill University (AI concentration) with hands-on experience
+                                    building backend systems, security tools, and ML-powered applications across
+                                    three software engineering internships.
                                 </p>
                             </div>
                         </div>
@@ -91,11 +92,11 @@ const About = () => {
                             />
                             <div>
                                 <p className="grid-headtext text-xl sm:text-2xl md:text-3xl lg:text-4xl">
-                                    Software and Security
+                                    AI, Security &amp; Backend Systems
                                 </p>
                                 <p className="grid-subtext text-sm sm:text-base md:text-lg lg:text-xl">
-                                    I specialize in a variety of languages, frameworks, and tools that allow me to build robust and scalable
-                                    applications.
+                                    I build with Java/Spring Boot, Python, and TypeScript — applying ML and
+                                    security principles to design distributed, production-grade systems.
                                 </p>
                             </div>
                         </div>
@@ -121,10 +122,11 @@ const About = () => {
                             </div>
                             <div>
                                 <p className="grid-headtext text-xl sm:text-2xl md:text-3xl lg:text-4xl">
-                                    I’m very flexible with time zone & locations
+                                    Montreal-based, globally minded
                                 </p>
                                 <p className="grid-subtext text-sm sm:text-base md:text-lg lg:text-xl">
-                                    I&apos;m based in Montreal, Canada and open to remote work worldwide.
+                                    Based in Montreal, QC. Exchange program at Hong Kong Polytechnic University
+                                    (Jan–May 2026). Open to remote and on-site opportunities worldwide.
                                 </p>
                             </div>
                         </div>
@@ -140,12 +142,12 @@ const About = () => {
                             />
                             <div>
                                 <p className="grid-headtext text-xl sm:text-2xl md:text-3xl lg:text-4xl">
-                                    My Passion for Coding
+                                    Practical, security-conscious engineering
                                 </p>
                                 <p className="grid-subtext text-sm sm:text-base md:text-lg lg:text-xl">
-                                    I love solving problems and building things through code. Programming isn&apos;t just my profession—it&apos;s
-                                    my passion. I enjoy exploring new technologies, enhancing my skills, and working in teams to fully contribute
-                                    to projects and learn from others.
+                                    I focus on building software that is reliable, secure, and maintainable. From microservices
+                                    and distributed event streams to ML threat detection — I care about correctness, performance,
+                                    and the design decisions behind each system.
                                 </p>
                             </div>
                         </div>
@@ -190,7 +192,7 @@ const About = () => {
 
 
             <motion.div variants={textVariant()}>
-                <h2 className={styles.sectionHeadText}>Job Interests</h2>
+                <h2 className={styles.sectionHeadText}>Areas of Focus</h2>
             </motion.div>
 
             <div className="mt-20 flex flex-wrap gap-10">

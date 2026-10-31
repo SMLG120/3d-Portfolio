@@ -20,20 +20,11 @@ import {
   python,
   php,
   symfony,
-  meta,
-  starbucks,
-  tesla,
   attestra,
-  yangtze,
-  assl,
-  grocheap,
-  shopify,
-  carrent,
-  jobit,
-  osProject,
-  stock,
   aiwaf,
   recmovie,
+  cybersecurity,
+  backend as fintech,
   threejs,
 } from "../assets";
 
@@ -44,7 +35,11 @@ export const navLinks = [
   },
   {
     id: "work",
-    title: "Work",
+    title: "Experience",
+  },
+  {
+    id: "projects",
+    title: "Projects",
   },
   {
     id: "contact",
@@ -58,16 +53,16 @@ const services = [
     icon: web,
   },
   {
-    title: "Security Analyst",
-    icon: mobile,
-  },
-  {
     title: "Backend Developer",
     icon: backend,
   },
   {
-    title: "Security Engineer",
+    title: "AI & ML Engineer",
     icon: creator,
+  },
+  {
+    title: "Security Engineer",
+    icon: mobile,
   },
 ];
 
@@ -85,25 +80,17 @@ const technologies = [
     icon: c,
   },
   {
-    name: "Php",
+    name: "PHP",
     icon: php,
   },
   {
-    name: "HTML 5",
-    icon: html,
-  },
-  {
-    name: "CSS 3",
-    icon: css,
+    name: "TypeScript",
+    icon: typescript,
   },
   {
     name: "JavaScript",
     icon: javascript,
   },
-  // {
-  //   name: "TypeScript",
-  //   icon: typescript,
-  // },
   {
     name: "React JS",
     icon: reactjs,
@@ -112,14 +99,10 @@ const technologies = [
     name: "Symfony PHP",
     icon: symfony,
   },
-  // {
-  //   name: "Tailwind CSS",
-  //   icon: tailwind,
-  // },
-  // {
-  //   name: "Three JS",
-  //   icon: threejs,
-  // },
+  {
+    name: "MongoDB",
+    icon: mongodb,
+  },
   {
     name: "git",
     icon: git,
@@ -133,160 +116,114 @@ const technologies = [
 const experiences = [
   {
     title: "Software Developer Intern",
-    company_name: "Attestra",
+    company_name: "Attestra (UPA)",
     icon: attestra,
     iconBg: "#E6DEDD",
-    date: "May 2025 - Aug 2025",
+    date: "July 2026 – Sept 2026",
     points: [
-      "Hardened PHP data-extraction pipelines with strict input sanitization against the DairyTrace & SimpliTrace, preventing malformed data ingestion and improving regulatory reporting accuracy.",
-      "Automated livestock traceability workflows via PHP scripting and scheduled jobs, eliminating manual data handoffs and reducing manual effort by 60%.",
-      "Debugged and resolved critical backend issues (around 50 bugs) across jQuery, Oracle SQL, and Zend PHP, cutting system cleanup time by 50%; refactored CI/CD pipelines and optimized SQL queries, reducing build-to-deploy time by 25%."
+      "Fixed backend defects on the DairyTrace and SimpliTrace platforms, tracing issues to root cause and submitting Git pull requests through code reviews.",
+      "Built dynamic PDF generation in PHP with custom client-specific report layouts.",
+    ],
+  },
+  {
+    title: "Software Developer Intern",
+    company_name: "Attestra (UPA)",
+    icon: attestra,
+    iconBg: "#E6DEDD",
+    date: "May 2025 – Aug 2025",
+    points: [
+      "Added input validation and sanitization to PHP data-extraction pipelines, preventing malformed data ingestion and improving regulatory reporting accuracy.",
+      "Automated livestock traceability workflows with PHP scripts and scheduled jobs, cutting manual effort by 60%.",
+      "Resolved ~50 backend bugs across jQuery, Oracle SQL, and Zend PHP, reducing system cleanup time by 50%.",
+      "Optimized SQL queries and refactored CI/CD pipelines, reducing build-to-deploy time by 25%.",
     ],
   },
   {
     title: "Full-Stack Developer Intern",
-    company_name: "Attestra",
+    company_name: "Attestra (UPA)",
     icon: attestra,
     iconBg: "#E6DEDD",
-    date: "Jun 2024 - Aug 2024",
+    date: "June 2024 – Aug 2024",
     points: [
-      "Contributed to back-end development using PHP Symfony and REST APIs and front-end enhancements with React Admin.",
-      "Developed a 'Newest' feature enabling efficient data retrieval from the server to the client interface.",
-      "Gained hands-on experience with AWS cloud under supervisor guidance and utilized Docker, IntelliJ, and Postman to support and streamline development workflows.",
-      "Participating in code reviews and providing constructive feedback to other developers.",
+      "Built access-controlled RESTful APIs with Symfony and API Platform (CORS, XSS prevention), cutting cross-team integration risk by 20%.",
+      "Refactored React Admin components, cutting navigation latency by 30% and reducing client-side data exposure.",
+      "Participated in code reviews and utilized Docker, AWS, and Postman to streamline development workflows.",
     ],
   },
-  {
-    title: "Academic Tutor",
-    company_name: "Edu Yangtze",
-    icon: yangtze,
-    iconBg: "#E6DEDD",
-    date: "Jun 2023 - Aug 2023",
-    points: [
-      "Organized and graded exams to assess student progress",
-      "Provided instruction in core subjects, including mathematics, French, and English.",
-      "Fostered a solid academic foundation and promoted students’ critical thinking and problem-solving",
-      "Key skills: Communication, Tutoring, Patience, Assistance",
-    ],
-  },
-  {
-    title: "Soccer Coach",
-    company_name: "ASSL",
-    icon: assl,
-    iconBg: "#383E56",
-    date: "Jan 2022 - Now",
-    points: [
-      "Established strong relationships with parents and supervisors through regular communication, meetings, and feedback sessions, ensuring a collaborative approach to player development.",
-      "Organized team activities and events to strengthen community ties.",
-      "Addressed individual player needs and concerns, fostering a suppodrtive atmosphere that enhances player performance and enjoyment.",
-    ],
-  },
-  // {
-  //   title: "Full stack Developer",
-  //   company_name: "Meta",
-  //   icon: meta,
-  //   iconBg: "#E6DEDD",
-  //   date: "Jan 2023 - Present",
-  //   points: [
-  //     "Lorem ipsum Developing and maintaining web applications using React.js and other related technologies.",
-  //     "Collaborating with cross-functional teams including designers, product managers, and other developers to create high-quality products.",
-  //     "Implementing responsive design and ensuring cross-browser compatibility.",
-  //     "Participating in code reviews and providing constructive feedback to other developers.",
-  //   ],
-  // },
 ];
 
-const testimonials = [
+const education = [
   {
-    testimonial:
-      "I thought it was impossible to make a website as beautiful as our product, but Rick proved me wrong.",
-    name: "Sara Lee",
-    designation: "CFO",
-    company: "Acme Co",
-    image: "https://randomuser.me/api/portraits/women/4.jpg",
+    degree: "B.Sc. Computer Science — AI Concentration",
+    institution: "McGill University",
+    location: "Montreal, QC",
+    date: "Aug 2023 – Dec 2026 (expected)",
+    highlights: [
+      "Concentration in Artificial Intelligence.",
+      "McGill CS Mentorship Program: guided first-year students in algorithms, Git, and interview prep (2024–2025).",
+      "Tech Fair Volunteer: coordinated logistics for a 200+ attendee technology showcase.",
+    ],
   },
   {
-    testimonial:
-      "I've never met a web developer who truly cares about their clients' success like Rick does.",
-    name: "Chris Brown",
-    designation: "COO",
-    company: "DEF Corp",
-    image: "https://randomuser.me/api/portraits/men/5.jpg",
-  },
-  {
-    testimonial:
-      "After Rick optimized our website, our traffic increased by 50%. We can't thank them enough!",
-    name: "Lisa Wang",
-    designation: "CTO",
-    company: "456 Enterprises",
-    image: "https://randomuser.me/api/portraits/women/6.jpg",
+    degree: "Computer Science Exchange Program",
+    institution: "Hong Kong Polytechnic University",
+    location: "Hong Kong",
+    date: "Jan 2026 – May 2026",
+    highlights: [
+      "Exchange semester with coursework in machine learning and data analytics.",
+    ],
   },
 ];
 
 const projects = [
   {
-    name: "AI Threat Web Application Firewall",
+    name: "AI-WAF — AI-Powered Web Application Firewall",
     description:
-      "Developed a real-time threat detection system for HTTP traffic, combining a Regex-based rule engine (inspired by ModSecurity)",
+      "Real-time HTTP threat-detection system pairing a regex rule engine with an ML ensemble (Isolation Forest, Random Forest, Autoencoder) over 30 engineered features to flag SQLi, XSS, SSRF, and path traversal. Live classifications streamed over WebSockets to a React dashboard.",
     tags: [
-      {
-        name: "TypeScript/JavaScript",
-        color: "blue-text-gradient",
-      },
-      {
-        name: "ML",
-        color: "green-text-gradient",
-      },
-      {
-        name: "React",
-        color: "pink-text-gradient",
-      },
+      { name: "Python / FastAPI", color: "blue-text-gradient" },
+      { name: "Scikit-learn", color: "green-text-gradient" },
+      { name: "React / Docker", color: "pink-text-gradient" },
     ],
     image: aiwaf,
     source_code_link: "https://github.com/SMLG120/AI-Threat-Detector",
   },
   {
-    name: "Recommendation Movie ML",
+    name: "Enterprise SIEM Platform",
     description:
-      "Team Project building a content-based XGBoost recommender system serving 1M+ users across 27K movies, deployed as a Dockerized Flask REST API consuming real-time Kafka event streams for live user activity ingestion.",
+      "Spring Boot microservices SIEM streaming events over Kafka to a rules engine that generates alerts and correlates them into incidents. Secured with Keycloak OIDC/JWT, RBAC, Redis rate limiting, and monitored via Prometheus/Grafana. React/TypeScript SOC dashboard.",
     tags: [
-      {
-        name: "python",
-        color: "blue-text-gradient",
-      },
-      {
-        name: "docker",
-        color: "green-text-gradient",
-      },
-      {
-        name: "GitLab CI/CD",
-        color: "pink-text-gradient",
-      },
+      { name: "Java 21 / Spring Boot", color: "blue-text-gradient" },
+      { name: "Kafka / OpenSearch", color: "green-text-gradient" },
+      { name: "Keycloak / K8s", color: "pink-text-gradient" },
+    ],
+    image: cybersecurity,
+    source_code_link: "https://github.com/SMLG120/SIEM--Dashboard",
+  },
+  {
+    name: "FinTech Transaction Platform",
+    description:
+      "9-service Spring Boot payment platform with isolated PostgreSQL databases and async Kafka messaging. Card tokenization (no PAN/CVV stored), encrypted PII at rest, idempotent double-entry ledger, and Keycloak JWT auth with 5 RBAC roles. Deployed with Kubernetes/Helm.",
+    tags: [
+      { name: "Java / Spring Boot", color: "blue-text-gradient" },
+      { name: "Kafka / PostgreSQL", color: "green-text-gradient" },
+      { name: "Keycloak / Kubernetes", color: "pink-text-gradient" },
+    ],
+    image: fintech,
+    source_code_link: "https://github.com/SMLG120/FinTech_Transaction_Platform",
+  },
+  {
+    name: "Movie Recommendation System",
+    description:
+      "XGBoost recommender serving 1M+ users across 27K movies, deployed as a Dockerized Flask REST API consuming real-time Kafka event streams for live user activity ingestion. Evaluated using hit rate and NDCG metrics with GitLab CI/CD pipeline.",
+    tags: [
+      { name: "Python / XGBoost", color: "blue-text-gradient" },
+      { name: "Kafka / Docker", color: "green-text-gradient" },
+      { name: "GitLab CI/CD", color: "pink-text-gradient" },
     ],
     image: recmovie,
     source_code_link: "https://github.com/SMLG120/Movie-Recommender-System",
   },
-  {
-    name: "Stock App",
-    description:
-      "Building a real-time stock market app with live prices, search, personalized alerts, interactive charts, AI-powered insights, daily news summary, watchlists, powered by Next.js, Better Auth, and Inngest for seamless automation.",
-    tags: [
-      {
-        name: "TypeScript programming",
-        color: "blue-text-gradient",
-      },
-      {
-        name: "Inngest",
-        color: "green-text-gradient",
-      },
-      {
-        name: "VSCode",
-        color: "pink-text-gradient",
-      },
-    ],
-    image: stock,
-    source_code_link: "https://github.com/SMLG120/Stock-App-Tracker",
-  },
 ];
 
-export { services, technologies, experiences, testimonials, projects };
+export { services, technologies, experiences, education, projects };

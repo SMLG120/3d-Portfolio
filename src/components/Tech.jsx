@@ -11,7 +11,7 @@ const Tech = () => {
       {/* Animated Sentence */}
       <motion.div variants={textVariant()} initial="hidden" animate="show">
         <p className={`${styles.sectionSubText} text-center`}>
-          Programming languages & Frameworks that I used before and now.
+          Technologies &amp; tools I build with
         </p>
       </motion.div>
 
