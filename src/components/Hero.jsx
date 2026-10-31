@@ -44,7 +44,7 @@ const Hero = () => {
         {/* Text + buttons — re-enable pointer events */}
         <div className="pointer-events-auto max-w-[55%] sm:max-w-[60%]">
           <h1 className={`${styles.heroHeadText} text-white`}>
-            Hi, I'm <span className="text-[#915EFF]">Samuel Ha</span>
+            Hi, I'm <span className="text-[#915EFF]">Samuel</span>
           </h1>
           <p className={`${styles.heroSubText} mt-2 text-white-100`}>
             Software Engineer{" "}
