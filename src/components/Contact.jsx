@@ -26,9 +26,9 @@ const Contact = () => {
     setLoading(true);
     // Public key: MEmeSsJYNDgXCmZ-Mb
     // Template: template_3n8sk5m
-    // Service: service_fegxbqk
+    // Service: service_6p2sltf
 
-    emailjs.send('service_fegxbqk', 'template_3n8sk5m',
+    emailjs.send('service_6p2sltf', 'template_3n8sk5m',
       {
         from_name: form.name,
         to_name: 'Samuel',
@@ -46,11 +46,11 @@ const Contact = () => {
         name: '',
         email: '',
         message: '',
-      }), (error) => {
-        setLoading(false)
-        console.log(error)
-        alert('Something went wrong')
-      }
+      })
+    }).catch((error) => {
+      setLoading(false)
+      console.log(error)
+      alert('Something went wrong')
     })
 
   }
