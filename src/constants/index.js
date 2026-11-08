@@ -25,6 +25,7 @@ import {
   recmovie,
   cybersecurity,
   worldcup,
+  teslha,
   stock,
   fintech,
   threejs,
@@ -249,6 +250,19 @@ const projects = [
     ],
     image: stock,
     source_code_link: "https://github.com/SMLG120/Stock-App-Tracker",
+  },
+  {
+    name: "TeslHa — 3D EV Showroom & Engineering Lab",
+    description:
+      "Interactive 3D electric-vehicle showroom with cars generated at runtime by a parametric design system. Includes an explorable 3D studio, engineering lab, multi-vehicle comparison, and an EV-vs-gas cost simulator, with every spec tracked per configuration, Zod-validated, and labelled by source.",
+    tags: [
+      { name: "Next.js / React 19", color: "blue-text-gradient" },
+      { name: "Three.js / R3F", color: "green-text-gradient" },
+      { name: "TypeScript / Zod", color: "pink-text-gradient" },
+    ],
+    image: teslha,
+    source_code_link: "https://github.com/SMLG120/TeslHa",
+    demo_link: "https://teslha.onrender.com",
   },
 ];
 

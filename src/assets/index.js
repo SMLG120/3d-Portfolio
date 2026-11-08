@@ -47,6 +47,7 @@ import recmovie from "./recmovie.png";
 import cybersecurity from "./cybersecurity.jpg";
 import grid4 from "./grid4.png";
 import worldcup from "./worldcup.png";
+import teslha from "./teslha.png";
 import fintech from "./fintech.jpg";
 
 export {
@@ -93,5 +94,6 @@ export {
   cybersecurity as cybersecurity,
   grid4 as grid4,
   worldcup as worldcup,
+  teslha as teslha,
   fintech as fintech,
 };
