@@ -30,6 +30,10 @@ const useSelfReveal = () => {
   return stacked ? SELF_REVEAL : undefined;
 };
 
+const projectsNewestFirst = [...projects].sort((a, b) =>
+  b.projectDate.localeCompare(a.projectDate)
+);
+
 // Inline external-link SVG (no new dependency needed)
 const ExternalLinkIcon = () => (
   <svg
@@ -142,8 +146,8 @@ const Works = () => {
       </div>
 
       <div className="mt-20 flex flex-wrap gap-7">
-        {projects.map((project, index) => (
-          <ProjectCard key={`project-${index}`} index={index} {...project} />
+        {projectsNewestFirst.map((project, index) => (
+          <ProjectCard key={project.name} index={index} {...project} />
         ))}
       </div>
     </>

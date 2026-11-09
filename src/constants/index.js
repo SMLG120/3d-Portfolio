@@ -178,6 +178,8 @@ const education = [
   },
 ];
 
+// projectDate is the date of the first commit in each project's repository (UTC).
+// Works.jsx displays projects newest first using this field.
 const projects = [
   {
     name: "AI-WAF — AI-Powered Web Application Firewall",
@@ -190,6 +192,7 @@ const projects = [
     ],
     image: aiwaf,
     source_code_link: "https://github.com/SMLG120/AI-Threat-Detector",
+    projectDate: "2026-03-27",
   },
   {
     name: "Enterprise SIEM Platform",
@@ -202,6 +205,7 @@ const projects = [
     ],
     image: cybersecurity,
     source_code_link: "https://github.com/SMLG120/SIEM--Dashboard",
+    projectDate: "2026-09-24",
   },
   {
     name: "FinTech Transaction Platform",
@@ -214,6 +218,7 @@ const projects = [
     ],
     image: fintech,
     source_code_link: "https://github.com/SMLG120/FinTech_Transaction_Platform",
+    projectDate: "2026-09-27",
   },
   {
     name: "Movie Recommendation System",
@@ -226,6 +231,7 @@ const projects = [
     ],
     image: recmovie,
     source_code_link: "https://github.com/SMLG120/Movie-Recommender-System",
+    projectDate: "2025-09-11",
   },
   {
     name: "World Cup Intelligence Platform",
@@ -238,6 +244,7 @@ const projects = [
     ],
     image: worldcup,
     source_code_link: "https://github.com/SMLG120/World-Cup-Intelligence-Platform",
+    projectDate: "2026-06-04",
   },
   {
     name: "Stock App Tracker",
@@ -250,6 +257,7 @@ const projects = [
     ],
     image: stock,
     source_code_link: "https://github.com/SMLG120/Stock-App-Tracker",
+    projectDate: "2026-01-27",
   },
   {
     name: "TeslHa — 3D EV Showroom & Engineering Lab",
@@ -262,6 +270,7 @@ const projects = [
     ],
     image: teslha,
     source_code_link: "https://github.com/SMLG120/TeslHa",
+    projectDate: "2026-11-07",
     demo_link: "https://teslha.onrender.com",
   },
 ];
