@@ -71,7 +71,7 @@ src/
   hoc/             SectionWrapper animation HOC
   utils/           Framer Motion variants
 public/
-  desktop_pc/      3D model (GLTF)
+  models/workstation/  Hero 3D model (GLB), poster, license
   planet/          3D model (GLTF)
   resume.tex       LaTeX CV source
   resume.pdf       compiled CV (compile locally — see above)

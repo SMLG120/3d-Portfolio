@@ -7,6 +7,7 @@ import { services } from "../constants";
 import { SectionWrapper } from "../hoc";
 import { fadeIn, textVariant } from "../utils/motion";
 import Globe from 'react-globe.gl';
+import WebGLBoundary from './canvas/WebGLBoundary';
 import Button from '../components/Button.jsx';
 import AppleFace from "../assets/AppleFace.png";
 import MeHello from "../assets/mehellowing.png";
@@ -106,6 +107,7 @@ const About = () => {
                     <div className="col-span-1 xl:row-span-4">
                         <div className="grid-container">
                             <div className="rounded-3xl w-full flex justify-center items-center">
+                                <WebGLBoundary>
                                 <Globe
                                     height={window.innerWidth < 768 ? 200 : 326}
                                     width={window.innerWidth < 768 ? 200 : 326}
@@ -119,6 +121,7 @@ const About = () => {
                                         { lat: 40, lng: -100, text: 'Montreal, Canada', color: 'white', size: 15 },
                                     ]}
                                 />
+                                </WebGLBoundary>
                             </div>
                             <div>
                                 <p className="grid-headtext text-xl sm:text-2xl md:text-3xl lg:text-4xl">

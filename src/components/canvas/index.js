@@ -1,6 +1,10 @@
-import EarthCanvas from "./Earth";
-import BallCanvas from "./Ball";
-import ComputersCanvas from "./Computers";
-import StarsCanvas from "./Stars";
+import Earth from "./Earth";
+import Ball from "./Ball";
+import Stars from "./Stars";
+import { withWebGLBoundary } from "./WebGLBoundary";
 
-export { EarthCanvas, BallCanvas, ComputersCanvas, StarsCanvas };
+const EarthCanvas = withWebGLBoundary(Earth);
+const BallCanvas = withWebGLBoundary(Ball);
+const StarsCanvas = withWebGLBoundary(Stars);
+
+export { EarthCanvas, BallCanvas, StarsCanvas };
