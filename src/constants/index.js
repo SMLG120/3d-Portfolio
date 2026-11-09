@@ -28,6 +28,7 @@ import {
   teslha,
   stock,
   fintech,
+  mlattacker,
   threejs,
 } from "../assets";
 
@@ -272,6 +273,19 @@ const projects = [
     source_code_link: "https://github.com/SMLG120/TeslHa",
     projectDate: "2026-11-07",
     demo_link: "https://teslha.onrender.com",
+  },
+  {
+    name: "Adversarial ML Model Attacker",
+    description:
+      "PyTorch framework that attacks MNIST and CIFAR-10 classifiers with FGSM, PGD, DeepFool, and Carlini & Wagner, measuring attack success, accuracy drop, and perturbation size. Compares standard and adversarially trained models and reports results in a React dashboard.",
+    tags: [
+      { name: "Python / PyTorch", color: "blue-text-gradient" },
+      { name: "FGSM / PGD / C&W", color: "green-text-gradient" },
+      { name: "React / Docker", color: "pink-text-gradient" },
+    ],
+    image: mlattacker,
+    source_code_link: "https://github.com/SMLG120/ML-Model-Attacker",
+    projectDate: "2026-04-16",
   },
 ];
 
