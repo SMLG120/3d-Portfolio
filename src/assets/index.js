@@ -49,6 +49,7 @@ import grid4 from "./grid4.png";
 import worldcup from "./worldcup.png";
 import teslha from "./teslha.png";
 import fintech from "./fintech.jpg";
+import mlattacker from "./mlattacker.png";
 
 export {
   logo,
@@ -96,4 +97,5 @@ export {
   worldcup as worldcup,
   teslha as teslha,
   fintech as fintech,
+  mlattacker as mlattacker,
 };
