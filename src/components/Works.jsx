@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { Tilt } from "react-tilt";
 import { motion } from "framer-motion";
 
@@ -7,6 +7,28 @@ import { github } from "../assets";
 import { SectionWrapper } from "../hoc";
 import { projects } from "../constants";
 import { fadeIn, textVariant } from "../utils/motion";
+
+// One-column layouts make this section several screens tall, so the section's
+// own "25% visible" trigger never fires. There, each item reveals itself.
+const STACKED_LAYOUT = "(max-width: 899px)";
+const SELF_REVEAL = {
+  initial: "hidden",
+  whileInView: "show",
+  viewport: { once: true, amount: 0.15 },
+};
+
+const useSelfReveal = () => {
+  const [stacked, setStacked] = useState(() => window.matchMedia(STACKED_LAYOUT).matches);
+
+  useEffect(() => {
+    const media = window.matchMedia(STACKED_LAYOUT);
+    const onChange = (e) => setStacked(e.matches);
+    media.addEventListener("change", onChange);
+    return () => media.removeEventListener("change", onChange);
+  }, []);
+
+  return stacked ? SELF_REVEAL : undefined;
+};
 
 // Inline external-link SVG (no new dependency needed)
 const ExternalLinkIcon = () => (
@@ -36,8 +58,10 @@ const ProjectCard = ({
   source_code_link,
   demo_link,
 }) => {
+  const reveal = useSelfReveal();
+
   return (
-    <motion.div variants={fadeIn("up", "spring", index * 0.5, 0.75)}>
+    <motion.div variants={fadeIn("up", "spring", reveal ? 0 : index * 0.5, 0.75)} {...reveal}>
       <Tilt
         options={{ max: 45, scale: 1, speed: 450 }}
         className="bg-tertiary p-5 rounded-2xl sm:w-[360px] w-full"
@@ -95,9 +119,11 @@ const ProjectCard = ({
 };
 
 const Works = () => {
+  const reveal = useSelfReveal();
+
   return (
     <>
-      <motion.div variants={textVariant()}>
+      <motion.div variants={textVariant()} {...reveal}>
         <p className={`${styles.sectionSubText}`}>My work</p>
         <h2 className={`${styles.sectionHeadText}`}>Projects</h2>
       </motion.div>
@@ -105,6 +131,7 @@ const Works = () => {
       <div className="w-full flex">
         <motion.p
           variants={fadeIn("", "", 0.1, 1)}
+          {...reveal}
           className="mt-3 text-secondary text-[17px] max-w-3xl leading-[30px]"
         >
           A selection of personal and academic projects spanning AI security, backend
