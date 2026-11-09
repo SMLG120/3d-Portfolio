@@ -7,11 +7,11 @@ import { services } from "../constants";
 import { SectionWrapper } from "../hoc";
 import { fadeIn, textVariant } from "../utils/motion";
 import Globe from 'react-globe.gl';
+import { KeyboardCanvas, OverviewModelCard, OverviewStage } from './overview3d';
 import WebGLBoundary from './canvas/WebGLBoundary';
 import Button from '../components/Button.jsx';
 import AppleFace from "../assets/AppleFace.png";
 import MeHello from "../assets/mehellowing.png";
-import API_image from "../assets/API.svg"
 import cybersecurity from "../assets/cybersecurity.jpg"
 import copyIcon from "../assets/copy.svg";
 import tickIcon from "../assets/tick.svg";
@@ -63,6 +63,7 @@ const About = () => {
             </motion.div>
 
             <section className="c-space my-20 px-4" id="about">
+                <OverviewStage>
                 {/* Arbitrary grid values: index.css redefines the xl:grid-* utilities without breakpoints. */}
                 <div className="grid gap-5 [grid-template-columns:minmax(0,1fr)] md:[grid-template-columns:repeat(2,minmax(0,1fr))] md:[grid-auto-flow:dense] xl:[grid-template-columns:repeat(3,minmax(0,1fr))] xl:[grid-template-rows:repeat(6,minmax(0,1fr))]">
                     {/* Grid 1: Introduction */}
@@ -73,11 +74,12 @@ const About = () => {
                                 alt="grid-1"
                                 className="w-full h-auto object-contain"
                             />
+                            <OverviewModelCard model="laptop" className="h-[150px]" />
                             <div>
                                 <p className="grid-headtext text-xl sm:text-2xl md:text-3xl lg:text-4xl">
                                     Hi, I’m Samuel
                                 </p>
-                                <p className="grid-subtext text-sm sm:text-base md:text-lg lg:text-xl">
+                                <p className="grid-subtext !text-secondary text-sm sm:text-base md:text-lg lg:text-xl">
                                     CS student at McGill University (AI concentration) with hands-on experience
                                     building backend systems, security tools, and ML-powered applications across
                                     three software engineering internships.
@@ -89,16 +91,12 @@ const About = () => {
                     {/* Grid 2: Tech Stack */}
                     <div className="xl:[grid-row:span_3/span_3]">
                         <div className="grid-container">
-                            <img
-                                src={API_image}
-                                alt="grid-2"
-                                className="w-full h-auto sm:h-[355px] object-contain"
-                            />
+                            <OverviewModelCard model="hud" className="h-[280px] sm:h-[355px]" />
                             <div>
                                 <p className="grid-headtext text-xl sm:text-2xl md:text-3xl lg:text-4xl">
                                     AI, Security &amp; Backend Systems
                                 </p>
-                                <p className="grid-subtext text-sm sm:text-base md:text-lg lg:text-xl">
+                                <p className="grid-subtext !text-secondary text-sm sm:text-base md:text-lg lg:text-xl">
                                     I build with Java/Spring Boot, Python, and TypeScript — applying ML and
                                     security principles to design distributed, production-grade systems.
                                 </p>
@@ -126,11 +124,12 @@ const About = () => {
                                 />
                                 </WebGLBoundary>
                             </div>
+                            <KeyboardCanvas className="h-[110px] sm:h-[140px]" />
                             <div>
                                 <p className="grid-headtext text-xl sm:text-2xl md:text-3xl lg:text-4xl">
                                     Montreal-based, globally minded
                                 </p>
-                                <p className="grid-subtext text-sm sm:text-base md:text-lg lg:text-xl">
+                                <p className="grid-subtext !text-secondary text-sm sm:text-base md:text-lg lg:text-xl">
                                     Based in Montreal, QC. Exchange program at Hong Kong Polytechnic University
                                     (Jan–May 2026). Open to remote and on-site opportunities worldwide.
                                 </p>
@@ -146,11 +145,15 @@ const About = () => {
                                 alt="grid-3"
                                 className="w-full h-auto object-contain"
                             />
+                            <div className="grid grid-cols-2 gap-5 w-full">
+                                <OverviewModelCard model="headphones" className="h-[150px] sm:h-[170px]" />
+                                <OverviewModelCard model="speaker" className="h-[150px] sm:h-[170px]" />
+                            </div>
                             <div>
                                 <p className="grid-headtext text-xl sm:text-2xl md:text-3xl lg:text-4xl">
                                     Practical, security-conscious engineering
                                 </p>
-                                <p className="grid-subtext text-sm sm:text-base md:text-lg lg:text-xl">
+                                <p className="grid-subtext !text-secondary text-sm sm:text-base md:text-lg lg:text-xl">
                                     I focus on building software that is reliable, secure, and maintainable. From microservices
                                     and distributed event streams to ML threat detection — I care about correctness, performance,
                                     and the design decisions behind each system.
@@ -194,6 +197,7 @@ const About = () => {
                         </div>
                     </div>
                 </div>
+                </OverviewStage>
             </section>
 
 
