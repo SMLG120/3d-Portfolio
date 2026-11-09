@@ -13,6 +13,8 @@ import AppleFace from "../assets/AppleFace.png";
 import MeHello from "../assets/mehellowing.png";
 import API_image from "../assets/API.svg"
 import cybersecurity from "../assets/cybersecurity.jpg"
+import copyIcon from "../assets/copy.svg";
+import tickIcon from "../assets/tick.svg";
 const ServiceCard = ({ index, title, icon }) => (
     <Tilt className='xs:w-[250px] w-full'>
         <motion.div
@@ -61,9 +63,10 @@ const About = () => {
             </motion.div>
 
             <section className="c-space my-20 px-4" id="about">
-                <div className="grid xl:grid-cols-3 xl:grid-rows-6 md:grid-cols-2 grid-cols-1 gap-5">
+                {/* Arbitrary grid values: index.css redefines the xl:grid-* utilities without breakpoints. */}
+                <div className="grid gap-5 [grid-template-columns:minmax(0,1fr)] md:[grid-template-columns:repeat(2,minmax(0,1fr))] md:[grid-auto-flow:dense] xl:[grid-template-columns:repeat(3,minmax(0,1fr))] xl:[grid-template-rows:repeat(6,minmax(0,1fr))]">
                     {/* Grid 1: Introduction */}
-                    <div className="col-span-1 xl:row-span-3">
+                    <div className="xl:[grid-row:span_3/span_3]">
                         <div className="grid-container">
                             <img
                                 src={MeHello}
@@ -84,7 +87,7 @@ const About = () => {
                     </div>
 
                     {/* Grid 2: Tech Stack */}
-                    <div className="col-span-1 xl:row-span-3">
+                    <div className="xl:[grid-row:span_3/span_3]">
                         <div className="grid-container">
                             <img
                                 src={API_image}
@@ -104,7 +107,7 @@ const About = () => {
                     </div>
 
                     {/* Grid 3: Globe Component */}
-                    <div className="col-span-1 xl:row-span-4">
+                    <div className="xl:[grid-row:span_4/span_4]">
                         <div className="grid-container">
                             <div className="rounded-3xl w-full flex justify-center items-center">
                                 <WebGLBoundary>
@@ -136,7 +139,7 @@ const About = () => {
                     </div>
 
                     {/* Grid 4: Passion for Coding */}
-                    <div className="xl:col-span-2 xl:row-span-3">
+                    <div className="md:[grid-column:span_2/span_2] xl:[grid-row:span_3/span_3]">
                         <div className="grid-container">
                             <img
                                 src={cybersecurity}
@@ -157,7 +160,7 @@ const About = () => {
                     </div>
 
                     {/* Grid 5: Contact Me */}
-                    <div className="xl:col-span-1 xl:row-span-2">
+                    <div className="xl:[grid-row:span_2/span_2]">
                         <div className="grid-container">
                             <div className="flex justify-center items-center h-[300px] w-full">
                                 <img
@@ -179,7 +182,7 @@ const About = () => {
                                     onClick={handleCopy}
                                 >
                                     <img
-                                        src={hasCopied ? 'src/assets/tick.svg' : 'src/assets/copy.svg'}
+                                        src={hasCopied ? tickIcon : copyIcon}
                                         alt="copy"
                                         className="h-6 w-6"
                                     />
