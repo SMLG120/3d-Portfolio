@@ -61,6 +61,7 @@ const ProjectCard = ({
   image,
   source_code_link,
   demo_link,
+  resources = [],
 }) => {
   const reveal = useSelfReveal();
 
@@ -106,6 +107,24 @@ const ProjectCard = ({
           <h3 className="text-white font-bold text-[20px] leading-tight">{name}</h3>
           <p className="mt-2 text-secondary text-[14px] leading-relaxed">{description}</p>
         </div>
+
+        {resources.length > 0 && (
+          <ul className="mt-4 flex flex-col gap-2" aria-label={`${name} resources`}>
+            {resources.map(({ label, href }) => (
+              <li key={href}>
+                <a
+                  href={href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2 text-[13px] text-secondary hover:text-white focus-visible:text-white focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#915eff] rounded-sm transition-colors"
+                >
+                  <ExternalLinkIcon />
+                  {label}
+                </a>
+              </li>
+            ))}
+          </ul>
+        )}
 
         <div className="mt-4 flex flex-wrap gap-2">
           {tags.map((tag) => (

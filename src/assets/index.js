@@ -1,3 +1,4 @@
+import ethos from "./ethos.png";
 import logo from "./logo.svg";
 import backend from "./backend.png";
 import creator from "./creator.png";
@@ -52,6 +53,7 @@ import fintech from "./fintech.jpg";
 import mlattacker from "./mlattacker.png";
 
 export {
+  ethos,
   logo,
   backend,
   creator,

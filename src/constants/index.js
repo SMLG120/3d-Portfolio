@@ -1,4 +1,5 @@
 import {
+  ethos,
   mobile,
   backend,
   creator,
@@ -182,6 +183,26 @@ const education = [
 // projectDate is the date of the first commit in each project's repository (UTC).
 // Works.jsx displays projects newest first using this field.
 const projects = [
+  {
+    name: "ETHOS — Explainable Portfolio Checks",
+    description:
+      "Built for PolyFinances Datathon 2026, ETHOS checks simulated purchases against user-confirmed portfolio limits. A deterministic Python engine traces exposure through ETF holdings and returns PASS, FAIL, or UNKNOWN with auditable evidence. Bounded Bedrock agents interpret rules and investigate results, backed by a serverless AWS architecture.",
+    tags: [
+      { name: "Next.js / TypeScript", color: "blue-text-gradient" },
+      { name: "Python / Amazon Bedrock", color: "green-text-gradient" },
+      { name: "AWS Lambda / SAM", color: "pink-text-gradient" },
+    ],
+    image: ethos,
+    source_code_link: "https://github.com/SMLG120/DatathonPolyFinance2026",
+    projectDate: "2026-11-15",
+    resources: [
+      { label: "Documentation technique", href: "https://github.com/SMLG120/DatathonPolyFinance2026/blob/main/docs/submission/technical-documentation.md" },
+      { label: "Architecture AWS", href: "https://github.com/SMLG120/DatathonPolyFinance2026/blob/main/docs/submission/aws-architecture.md" },
+      { label: "Diagramme AWS", href: "https://github.com/SMLG120/DatathonPolyFinance2026/blob/main/docs/submission/aws-architecture.svg" },
+      { label: "Guide d’installation", href: "https://github.com/SMLG120/DatathonPolyFinance2026#quick-start-submitted-version-team-11" },
+    ],
+  },
+
   {
     name: "AI-WAF — AI-Powered Web Application Firewall",
     description:
