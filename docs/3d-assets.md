@@ -59,7 +59,7 @@ After a visible change to the model or lighting, re-render `poster.webp` so the 
 
 ## Overview section models
 
-Licenses were looked up on 2026-11-18. None of the provided files contains license or author metadata. Each model was matched to its Sketchfab listing by the download filename, which is the listing title in snake_case, and by triangle count. No geometry was decimated, so the counts should agree apart from the parts removed during optimization.
+Licenses were looked up on 2026-11-18. Apart from the keyboard, none of the provided files contains license or author metadata. Those models were matched to their Sketchfab listings by the download filename, which is the listing title in snake_case, and by triangle count. No geometry was decimated, so the counts should agree apart from the parts removed during optimization.
 
 | Model | Served file | Provided source | Sketchfab listing | Author | License | Match evidence |
 |---|---|---|---|---|---|---|
@@ -67,13 +67,13 @@ Licenses were looked up on 2026-11-18. None of the provided files contains licen
 | Sci-Fi HUD | `public/models/overview/cyberpunk/cyberpunk-hud.glb` | `sci_fi_hud_quillvr.glb` | [SCI-FI HUD - QuillVR](https://sketchfab.com/3d-models/sci-fi-hud-quillvr-4dd7b9979a624a53aa7ce601ea98a707) | [maomornity](https://sketchfab.com/maomornity) | [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/) | Filename matches; 37,302 vs 33,628 triangles (backdrop mesh removed) |
 | Headphones | `public/models/overview/headphones/headphones.glb` | `headphones_med_poly.glb` | [Headphones Med poly](https://sketchfab.com/3d-models/headphones-med-poly-c77b8c7f5d39460eaed920b6f32ddcbe) | [YourBasicDesigner](https://sketchfab.com/YourBasicDesigner) | [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/) | Filename matches; 8,846 triangles in both |
 | Home speaker bar | `public/models/overview/speaker/speaker.glb` | `home_speaker_bar.glb` | [Home Speaker Bar](https://sketchfab.com/3d-models/home-speaker-bar-605f456e2ba14e4d8d887b7b9f8e53a1) | [re1monsen](https://sketchfab.com/re1monsen) | [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/) | Filename matches; 27,794 vs 27,792 triangles (display floor removed) |
-| Keyboard (texture named for an RK61) | `public/models/overview/keyboard/k1.glb` | `k1.glb`, exported from Blender | Not found | Unknown | **Unverified** | Its texture is named `rk61_60_wireless_gaming_keyboard`, and Sketchfab has no downloadable model under that name. It is not Yolala3D's Aorus K1 (34,826 vs 37,564 triangles). |
+| Keyboard | `public/models/overview/keyboard/keyboard.glb` | `mechanical_keyboard_-_aesthetic.glb` | [Mechanical Keyboard - Aesthetic](https://sketchfab.com/3d-models/mechanical-keyboard-aesthetic-44bb12d306864e2cb4256a61d4168942) | [M.Reslan](https://sketchfab.com/mreslan) | [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/) | Author, license and source are in the download's glTF metadata; 18,056 triangles in both |
 
 ### What the licenses require
 
-- **CC BY 4.0 (Sci-Fi HUD, Headphones, Speaker):** commercial use and modification are allowed. The author must be credited with the title, author, source link, license link and a note that the model was modified. These credits are shown under the Overview grid (`src/components/overview3d/OverviewCredits.jsx`) and in a `LICENSE.txt` next to each model. Keep both.
+- **CC BY 4.0 (Sci-Fi HUD, Headphones, Speaker, Keyboard):** commercial use and modification are allowed. The author must be credited with the title, author, source link, license link and a note that the model was modified. These credits are shown under the Overview grid (`src/components/overview3d/OverviewCredits.jsx`) and in a `LICENSE.txt` next to each model. Keep both.
 - **Sketchfab Free Standard (Laptop):** use in any medium, commercial or not, and in derivative works, with no credit required. Sketchfab's standard restrictions forbid redistributing the model as a standalone asset. The optimized GLB is incorporated into the site, but it can still be fetched directly from `public/`. Its `LICENSE.txt` records the source.
-- **Keyboard:** treat it as all rights reserved until its source is known. If the source can't be found, replace it with a model whose license is known.
+- **Previous keyboard:** the earlier `k1.glb` (texture named for an RK61) had no identifiable source or license. It was replaced on 2026-11-18 and should not be restored.
 
 The `poster.webp` beside each model is a static render of that model and has the same license status.
 
@@ -85,7 +85,7 @@ The `poster.webp` beside each model is a static render of that model and has the
 | Sci-Fi HUD | 2.02 MB | 170 KB | 33,628 | Dark backdrop mesh and a one-keyframe camera animation removed, Meshopt. |
 | Headphones | 342 KB | 58 KB | 8,846 | Meshes joined, Meshopt. |
 | Speaker | 106.47 MB | 562 KB | 27,792 | Display floor removed, 4K textures reduced to 1024 px WebP, Meshopt. |
-| Keyboard | 2.76 MB | 622 KB | 37,564 | Duplicate materials merged, texture reduced from 1600 to 1024 px, Meshopt. |
+| Keyboard | 13.34 MB | 363 KB | 18,056 | Textures reduced to 1024 px WebP, Meshopt. |
 
 No geometry was decimated. The provided source GLBs are not in `public/`.
 
@@ -101,4 +101,4 @@ npx @gltf-transform/cli@4 optimize input.glb output.glb \
 
 Edit `src/components/overview3d/overviewModels.js` for pose, framing, per-model light, material colors, lighting and motion.
 
-All four models share one WebGL canvas because the site is at the browser's context limit. Do not give each model its own `<Canvas>`.
+All five models share one WebGL canvas because the site is at the browser's context limit. Do not give each model its own `<Canvas>`.

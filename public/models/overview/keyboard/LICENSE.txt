@@ -1,0 +1,7 @@
+keyboard.glb and poster.webp are based on "Mechanical Keyboard - Aesthetic"
+(https://sketchfab.com/3d-models/mechanical-keyboard-aesthetic-44bb12d306864e2cb4256a61d4168942)
+by M.Reslan (https://sketchfab.com/mreslan), licensed under CC-BY-4.0
+(http://creativecommons.org/licenses/by/4.0/).
+
+Changes: textures resized to 1024 px WebP, geometry compressed.
+poster.webp is a static render of the optimized model. See docs/3d-assets.md.
