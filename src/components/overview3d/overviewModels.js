@@ -54,14 +54,14 @@ export const OVERVIEW_MODELS = {
 };
 
 OVERVIEW_MODELS.keyboard = {
-  url: asset("keyboard/k1.glb"),
+  url: asset("keyboard/keyboard.glb"),
   poster: asset("keyboard/poster.webp"),
-  alt: "Compact mechanical keyboard",
-  rotation: [0.06, -0.24, 0],
+  alt: "Compact 60% mechanical keyboard with a lilac case and teal and cream keycaps",
+  rotation: [0.72, -0.28, 0],
   margin: 1.08,
   sway: 0.08,
   phase: 5.2,
-  lightBoost: 0.5, // white keycaps wash out under the lighting used for black models
+  lightBoost: 0.7, // pastel keycaps wash out under the lighting used for black models
 };
 
 export const VIEW = { fov: 26, near: 0.05, far: 30, maxDpr: 1.5 };
