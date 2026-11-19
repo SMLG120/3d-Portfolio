@@ -9,8 +9,11 @@
 \usepackage{enumitem}
 \usepackage[hidelinks]{hyperref}
 \usepackage{microtype}
-\input{glyphtounicode}
-\pdfgentounicode=1
+% pdfLaTeX only (Overleaf); skipped by XeTeX-based engines such as Tectonic.
+\ifdefined\pdfgentounicode
+  \input{glyphtounicode}
+  \pdfgentounicode=1
+\fi
 
 \pagestyle{empty}
 \setlength{\parindent}{0pt}
