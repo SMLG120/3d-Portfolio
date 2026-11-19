@@ -4,6 +4,11 @@ import { styles } from "../styles";
 import { WorkstationStage } from "./hero3d";
 import { useReducedMotion } from "./hero3d/useReducedMotion";
 
+// Until public/resume.pdf is added, the résumé button opens the LinkedIn profile.
+const RESUME_FALLBACK = "https://www.linkedin.com/in/samuel-ha-551644322/";
+
+const BACKGROUND_WORDS = ["SOFTWARE ENGINEERING", "ARTIFICIAL INTELLIGENCE", "CYBERSECURITY"];
+
 const reveal = (delay) => ({
   initial: { opacity: 0, y: 14 },
   animate: { opacity: 1, y: 0 },
@@ -21,13 +26,11 @@ const Hero = () => {
     setCvLoading(true);
     try {
       const res = await fetch("/resume.pdf", { method: "HEAD" });
-      if (res.ok) {
-        window.open("/resume.pdf", "_blank");
-      } else {
-        window.open("https://www.linkedin.com/in/samuel-ha-551644322/", "_blank");
-      }
+      // Dev servers answer unknown paths with index.html, so require a real PDF.
+      const isPdf = res.ok && (res.headers.get("content-type") || "").includes("pdf");
+      window.open(isPdf ? "/resume.pdf" : RESUME_FALLBACK, "_blank", "noopener,noreferrer");
     } catch {
-      window.open("https://www.linkedin.com/in/samuel-ha-551644322/", "_blank");
+      window.open(RESUME_FALLBACK, "_blank", "noopener,noreferrer");
     } finally {
       setCvLoading(false);
     }
@@ -35,6 +38,23 @@ const Hero = () => {
 
   return (
     <section className="relative w-full min-h-screen overflow-hidden bg-[#050817] flex flex-col">
+      {/* Decorative background: slow gradient light + oversized outline words. Hidden from assistive tech. */}
+      <div aria-hidden="true" className="pointer-events-none absolute inset-0 hero-aurora" />
+      <div
+        aria-hidden="true"
+        className="pointer-events-none absolute inset-0 flex flex-col justify-center gap-[6vh] overflow-hidden pl-[4vw]"
+      >
+        {BACKGROUND_WORDS.map((word, i) => (
+          <span
+            key={word}
+            className="hero-bg-word text-[15vw] lg:text-[9vw]"
+            style={{ marginLeft: `${i * 8}vw` }}
+          >
+            {word}
+          </span>
+        ))}
+      </div>
+
       <div
         className={`relative flex-1 w-full max-w-7xl mx-auto ${styles.paddingX} pt-24 lg:pt-20 pb-4 grid lg:grid-cols-[45fr_55fr] items-center gap-6 lg:gap-8`}
       >
@@ -46,44 +66,64 @@ const Hero = () => {
           </div>
 
           <div className="min-w-0">
-            <motion.h1
+            <motion.p
               {...enter(0)}
-              className="font-black text-white text-[36px] xs:text-[48px] sm:text-[60px] lg:text-[44px] xl:text-[60px] leading-[1.15]"
+              className="font-mono text-[12px] sm:text-[13px] uppercase tracking-[0.18em] text-[#00cea8]"
             >
-              Hi, I&apos;m <span className="text-[#915EFF]">Samuel</span>
-            </motion.h1>
-            <motion.p
-              {...enter(0.08)}
-              className="mt-3 text-[#dfd9ff] font-medium text-[18px] xs:text-[20px] sm:text-[24px] lg:text-[20px] xl:text-[24px] leading-snug"
-            >
-              Software Engineer <span className="text-[#915EFF]">|</span> AI &amp; Cybersecurity
+              Software · AI · Security · Cloud
             </motion.p>
+            <h1 className="mt-3">
+              <motion.span
+                {...enter(0.05)}
+                className="block font-display font-bold text-white text-[34px] xs:text-[44px] sm:text-[54px] lg:text-[44px] xl:text-[56px] leading-[1.05]"
+              >
+                Hi, I&apos;m <span className="text-[#915EFF]">Samuel</span>.
+              </motion.span>
+              <motion.span
+                {...enter(0.12)}
+                className="mt-3 block font-display font-semibold text-[#e7e3ff] text-[22px] xs:text-[26px] sm:text-[32px] lg:text-[26px] xl:text-[32px] leading-[1.18] text-balance"
+              >
+                Software Engineer Building Intelligent, Secure &amp; Interactive Experiences.
+              </motion.span>
+            </h1>
             <motion.p
-              {...enter(0.16)}
-              className="mt-3 text-[15px] sm:text-[17px] text-[#aaa8c2] leading-relaxed max-w-[34rem]"
+              {...enter(0.2)}
+              className="mt-4 text-[15px] sm:text-[16px] text-[#b4b1cc] leading-relaxed max-w-[36rem]"
             >
-              CS Student @ McGill · Building reliable, intelligent &amp; secure systems
+              Computer Science student at McGill University specializing in AI, with a foundation
+              in statistics and hands-on experience in full-stack development, machine learning,
+              cybersecurity, and cloud technologies. I build practical software that connects
+              intelligent systems with real-world problems.
             </motion.p>
 
-            <motion.div {...enter(0.24)} className="mt-6 sm:mt-8 flex flex-wrap gap-3">
+            <motion.div {...enter(0.28)} className="mt-6 sm:mt-7 flex flex-wrap gap-3">
               <a
                 href="#projects"
                 className="px-5 py-3 bg-[#915EFF] text-white text-[14px] font-semibold rounded-lg hover:bg-[#7a4fd6] transition-colors duration-200 select-none"
               >
-                View Projects
+                Explore Projects
               </a>
               <button
+                type="button"
                 onClick={handleDownloadCV}
                 disabled={cvLoading}
-                className="px-5 py-3 border border-[#915EFF] text-[#915EFF] text-[14px] font-semibold rounded-lg hover:bg-[#915EFF] hover:text-white transition-colors duration-200 select-none disabled:opacity-60 cursor-pointer"
+                className="px-5 py-3 border border-[#915EFF] text-[#c9b3ff] text-[14px] font-semibold rounded-lg hover:bg-[#915EFF] hover:text-white transition-colors duration-200 select-none disabled:opacity-60 cursor-pointer"
               >
-                {cvLoading ? "Opening…" : "Download CV"}
+                {cvLoading ? "Opening…" : "View Résumé"}
               </button>
               <a
-                href="#contact"
-                className="px-5 py-3 border border-[#aaa8c2] text-[#aaa8c2] text-[14px] font-semibold rounded-lg hover:border-white hover:text-white transition-colors duration-200 select-none"
+                href="https://github.com/SMLG120"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="px-5 py-3 border border-[#3a3657] text-[#dfd9ff] text-[14px] font-semibold rounded-lg hover:border-white hover:text-white transition-colors duration-200 select-none"
               >
-                Contact Me
+                GitHub<span className="sr-only"> (opens in a new tab)</span>
+              </a>
+              <a
+                href="#contact"
+                className="px-5 py-3 border border-[#3a3657] text-[#dfd9ff] text-[14px] font-semibold rounded-lg hover:border-white hover:text-white transition-colors duration-200 select-none"
+              >
+                Let&apos;s Connect
               </a>
             </motion.div>
           </div>

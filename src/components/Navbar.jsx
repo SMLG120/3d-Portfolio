@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 
 import { styles } from "../styles";
@@ -59,18 +59,18 @@ const Navbar = () => {
           <img src={logo} alt="logo" className="w-9 h-9 object-contain" />
           <p className="text-white text-[18px] font-bold cursor-pointer flex">
             Samuel &nbsp;
-            <span className="sm:block hidden"> | Portfolio</span>
+            <span className="lg:block hidden"> | Portfolio</span>
           </p>
         </Link>
 
         {/* Desktop links */}
-        <ul className="list-none hidden sm:flex flex-row gap-10">
+        <ul className="list-none hidden md:flex flex-row gap-6 lg:gap-9">
           {navLinks.map((nav) => (
             <li
               key={nav.id}
               className={`${
                 active === nav.title ? "text-white" : "text-secondary"
-              } hover:text-white text-[18px] font-medium cursor-pointer transition-colors duration-200`}
+              } hover:text-white text-[16px] lg:text-[17px] font-medium cursor-pointer transition-colors duration-200`}
               onClick={() => setActive(nav.title)}
             >
               <a href={`#${nav.id}`}>{nav.title}</a>
@@ -79,15 +79,20 @@ const Navbar = () => {
         </ul>
 
         {/* Mobile hamburger */}
-        <div className="sm:hidden flex flex-1 justify-end items-center">
-          <img
-            src={toggle ? close : menu}
-            alt="menu"
-            className="w-[28px] h-[28px] object-contain cursor-pointer"
+        <div className="md:hidden flex flex-1 justify-end items-center">
+          <button
+            type="button"
+            aria-expanded={toggle}
+            aria-controls="mobile-menu"
+            aria-label={toggle ? "Close menu" : "Open menu"}
             onClick={() => setToggle(!toggle)}
-          />
+            className="p-1 -m-1"
+          >
+            <img src={toggle ? close : menu} alt="" className="w-[28px] h-[28px] object-contain" />
+          </button>
 
           <div
+            id="mobile-menu"
             className={`${
               !toggle ? "hidden" : "flex"
             } p-6 black-gradient absolute top-20 right-0 mx-4 my-2 min-w-[140px] z-10 rounded-xl`}
@@ -96,7 +101,7 @@ const Navbar = () => {
               {navLinks.map((nav) => (
                 <li
                   key={nav.id}
-                  className={`font-poppins font-medium cursor-pointer text-[16px] ${
+                  className={`font-medium cursor-pointer text-[16px] ${
                     active === nav.title ? "text-white" : "text-secondary"
                   }`}
                   onClick={() => {
