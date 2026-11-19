@@ -42,3 +42,24 @@ export const TagList = ({ name, tags }) => (
     ))}
   </ul>
 );
+
+// Optional supporting links (docs, diagrams, guides) as an accessible list.
+export const ResourceLinks = ({ name, resources = [] }) =>
+  resources.length > 0 && (
+    <ul className="flex flex-col gap-2" aria-label={`${name} resources`}>
+      {resources.map(({ label, href }) => (
+        <li key={href}>
+          <a
+            href={href}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-2 text-[13px] text-secondary hover:text-white focus-visible:text-white focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#915eff] rounded-sm transition-colors"
+          >
+            <Icon name="external" className="w-4 h-4" />
+            {label}
+            <span className="sr-only"> (opens in a new tab)</span>
+          </a>
+        </li>
+      ))}
+    </ul>
+  );

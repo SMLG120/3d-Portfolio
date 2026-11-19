@@ -445,6 +445,12 @@ const hackathons = [
     demo_link: "https://frontend-nu-ten-2dcoorcmis.vercel.app",
     demo_note: "Live demo runs on built-in test data",
     source_code_link: "https://github.com/SMLG120/DatathonPolyFinance2026",
+    resources: [
+      { label: "Documentation technique", href: "https://github.com/SMLG120/DatathonPolyFinance2026/blob/main/docs/submission/technical-documentation.md" },
+      { label: "Architecture AWS", href: "https://github.com/SMLG120/DatathonPolyFinance2026/blob/main/docs/submission/aws-architecture.md" },
+      { label: "Diagramme AWS", href: "https://github.com/SMLG120/DatathonPolyFinance2026/blob/main/docs/submission/aws-architecture.svg" },
+      { label: "Guide d’installation", href: "https://github.com/SMLG120/DatathonPolyFinance2026#quick-start-submitted-version-team-11" },
+    ],
   },
 ];
 

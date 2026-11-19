@@ -6,7 +6,7 @@ import { SectionWrapper } from "../hoc";
 import { hackathons } from "../constants";
 import { fadeIn, textVariant } from "../utils/motion";
 import Icon from "./ui/Icon";
-import { ProjectLinks, TagList } from "./ui/ProjectParts";
+import { ProjectLinks, ResourceLinks, TagList } from "./ui/ProjectParts";
 
 const HackathonCard = ({ entry }) => (
   <motion.article
@@ -56,6 +56,11 @@ const HackathonCard = ({ entry }) => (
             <p className="mt-2 text-[12px] text-secondary">{entry.demo_note}.</p>
           )}
         </div>
+        {entry.resources?.length > 0 && (
+          <div className="mt-5">
+            <ResourceLinks name={entry.name} resources={entry.resources} />
+          </div>
+        )}
       </div>
 
       <div className="order-1 lg:order-2 min-w-0">
