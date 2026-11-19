@@ -1,0 +1,7 @@
+speaker.glb and poster.webp are based on "Home Speaker Bar"
+(https://sketchfab.com/3d-models/home-speaker-bar-605f456e2ba14e4d8d887b7b9f8e53a1)
+by re1monsen (https://sketchfab.com/re1monsen), licensed under CC-BY-4.0
+(http://creativecommons.org/licenses/by/4.0/).
+
+Changes: display floor removed, textures resized to 1024 px WebP, geometry compressed.
+poster.webp is a static render of the optimized model. See docs/3d-assets.md.
