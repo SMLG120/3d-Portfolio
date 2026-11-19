@@ -1,0 +1,7 @@
+cyberpunk-hud.glb and poster.webp are based on "SCI-FI HUD - QuillVR"
+(https://sketchfab.com/3d-models/sci-fi-hud-quillvr-4dd7b9979a624a53aa7ce601ea98a707)
+by maomornity (https://sketchfab.com/maomornity), licensed under CC-BY-4.0
+(http://creativecommons.org/licenses/by/4.0/).
+
+Changes: backdrop mesh and camera animation removed, geometry compressed.
+poster.webp is a static render of the optimized model. See docs/3d-assets.md.

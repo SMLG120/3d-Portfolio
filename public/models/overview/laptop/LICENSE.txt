@@ -1,0 +1,8 @@
+laptop.glb and poster.webp are based on "Laptop Model (Black)"
+(https://sketchfab.com/3d-models/laptop-model-black-404bef9dab2e46f99ebd4c09ed664ee3)
+by SILVER KEY (https://sketchfab.com/silver_key_nerd), licensed under the
+Sketchfab Free Standard license (https://sketchfab.com/licenses). No credit is
+required; the model may not be redistributed as a standalone asset.
+
+Changes: meshes joined, lens transmission replaced with alpha blending, geometry compressed.
+poster.webp is a static render of the optimized model. See docs/3d-assets.md.

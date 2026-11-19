@@ -7,7 +7,7 @@ import { services } from "../constants";
 import { SectionWrapper } from "../hoc";
 import { fadeIn, textVariant } from "../utils/motion";
 import Globe from 'react-globe.gl';
-import { KeyboardCanvas, OverviewModelCard, OverviewStage } from './overview3d';
+import { KeyboardCanvas, OverviewCredits, OverviewModelCard, OverviewStage } from './overview3d';
 import WebGLBoundary from './canvas/WebGLBoundary';
 import AppleFace from "../assets/AppleFace.png";
 import MeHello from "../assets/mehellowing.png";
@@ -191,6 +191,7 @@ const About = () => {
                         </div>
                     </div>
                 </div>
+                <OverviewCredits />
                 </OverviewStage>
             </section>
 

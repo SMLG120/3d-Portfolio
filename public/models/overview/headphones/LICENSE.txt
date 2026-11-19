@@ -1,0 +1,7 @@
+headphones.glb and poster.webp are based on "Headphones Med poly"
+(https://sketchfab.com/3d-models/headphones-med-poly-c77b8c7f5d39460eaed920b6f32ddcbe)
+by YourBasicDesigner (https://sketchfab.com/YourBasicDesigner), licensed under CC-BY-4.0
+(http://creativecommons.org/licenses/by/4.0/).
+
+Changes: meshes joined, geometry compressed.
+poster.webp is a static render of the optimized model. See docs/3d-assets.md.

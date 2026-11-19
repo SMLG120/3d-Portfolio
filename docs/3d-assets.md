@@ -59,16 +59,21 @@ After a visible change to the model or lighting, re-render `poster.webp` so the 
 
 ## Overview section models
 
-**License status: NOT VERIFIED. These models were published at the site owner's request on 2026-11-09, before their licenses were confirmed.**
-None of the provided files contains license or author metadata. Check each model's Fab or Sketchfab listing, then fill in this table and add any required credit to the site.
+Licenses were looked up on 2026-11-18. None of the provided files contains license or author metadata. Each model was matched to its Sketchfab listing by the download filename, which is the listing title in snake_case, and by triangle count. No geometry was decimated, so the counts should agree apart from the parts removed during optimization.
 
-| Model | Served file | Provided source | Author | License |
-|---|---|---|---|---|
-| Laptop | `public/models/overview/laptop/laptop.glb` | `laptop_model_black.glb` | Unknown | Unverified |
-| Sci-Fi HUD | `public/models/overview/cyberpunk/cyberpunk-hud.glb` | `sci_fi_hud_quillvr.glb` | Listed under maomornity on [Sketchfab](https://sketchfab.com/3d-models/sci-fi-hud-quillvr-4dd7b9979a624a53aa7ce601ea98a707) | Unverified |
-| Headphones | `public/models/overview/headphones/headphones.glb` | `headphones_med_poly.glb` | Unknown | Unverified |
-| Home speaker bar | `public/models/overview/speaker/speaker.glb` | `home_speaker_bar.glb` | Unknown | Unverified |
-| Keyboard (texture named for an RK61) | `public/models/overview/keyboard/k1.glb` | `k1.glb`, exported from Blender | Unknown | Unverified |
+| Model | Served file | Provided source | Sketchfab listing | Author | License | Match evidence |
+|---|---|---|---|---|---|---|
+| Laptop | `public/models/overview/laptop/laptop.glb` | `laptop_model_black.glb` | [Laptop Model (Black)](https://sketchfab.com/3d-models/laptop-model-black-404bef9dab2e46f99ebd4c09ed664ee3) | [SILVER KEY](https://sketchfab.com/silver_key_nerd) | Sketchfab Free Standard ([terms](https://sketchfab.com/licenses)) | Filename matches; 25,942 vs 25,903 triangles (meshes joined) |
+| Sci-Fi HUD | `public/models/overview/cyberpunk/cyberpunk-hud.glb` | `sci_fi_hud_quillvr.glb` | [SCI-FI HUD - QuillVR](https://sketchfab.com/3d-models/sci-fi-hud-quillvr-4dd7b9979a624a53aa7ce601ea98a707) | [maomornity](https://sketchfab.com/maomornity) | [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/) | Filename matches; 37,302 vs 33,628 triangles (backdrop mesh removed) |
+| Headphones | `public/models/overview/headphones/headphones.glb` | `headphones_med_poly.glb` | [Headphones Med poly](https://sketchfab.com/3d-models/headphones-med-poly-c77b8c7f5d39460eaed920b6f32ddcbe) | [YourBasicDesigner](https://sketchfab.com/YourBasicDesigner) | [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/) | Filename matches; 8,846 triangles in both |
+| Home speaker bar | `public/models/overview/speaker/speaker.glb` | `home_speaker_bar.glb` | [Home Speaker Bar](https://sketchfab.com/3d-models/home-speaker-bar-605f456e2ba14e4d8d887b7b9f8e53a1) | [re1monsen](https://sketchfab.com/re1monsen) | [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/) | Filename matches; 27,794 vs 27,792 triangles (display floor removed) |
+| Keyboard (texture named for an RK61) | `public/models/overview/keyboard/k1.glb` | `k1.glb`, exported from Blender | Not found | Unknown | **Unverified** | Its texture is named `rk61_60_wireless_gaming_keyboard`, and Sketchfab has no downloadable model under that name. It is not Yolala3D's Aorus K1 (34,826 vs 37,564 triangles). |
+
+### What the licenses require
+
+- **CC BY 4.0 (Sci-Fi HUD, Headphones, Speaker):** commercial use and modification are allowed. The author must be credited with the title, author, source link, license link and a note that the model was modified. These credits are shown under the Overview grid (`src/components/overview3d/OverviewCredits.jsx`) and in a `LICENSE.txt` next to each model. Keep both.
+- **Sketchfab Free Standard (Laptop):** use in any medium, commercial or not, and in derivative works, with no credit required. Sketchfab's standard restrictions forbid redistributing the model as a standalone asset. The optimized GLB is incorporated into the site, but it can still be fetched directly from `public/`. Its `LICENSE.txt` records the source.
+- **Keyboard:** treat it as all rights reserved until its source is known. If the source can't be found, replace it with a model whose license is known.
 
 The `poster.webp` beside each model is a static render of that model and has the same license status.
 
