@@ -1,4 +1,3 @@
-import ethos from "./ethos.png";
 import logo from "./logo.svg";
 import backend from "./backend.png";
 import creator from "./creator.png";
@@ -37,23 +36,19 @@ import attestra from "./company/attestra.jpg";
 import yangtze from "./company/yangtze.png";
 import assl from "./company/assl.jpg";
 
-import grocheap from "./grocheap.png";
-import carrent from "./carrent.png";
-import jobit from "./jobit.png";
-import osProject from "./osProject.png";
 
-import stock from "./stock.png";
-import aiwaf from "./aiwaf.png";
-import recmovie from "./recmovie.png";
+import stock from "./stock.webp";
+import aiwaf from "./aiwaf.webp";
+import recmovie from "./recmovie.webp";
 import cybersecurity from "./cybersecurity.jpg";
-import grid4 from "./grid4.png";
-import worldcup from "./worldcup.png";
-import teslha from "./teslha.png";
+import worldcup from "./worldcup.webp";
+import teslha from "./teslha.webp";
 import fintech from "./fintech.jpg";
-import mlattacker from "./mlattacker.png";
+import winterpath from "./winterpath.webp";
+import polyfinancesDatathon from "./polyfinances-datathon.webp";
+import mlattacker from "./mlattacker.webp";
 
 export {
-  ethos,
   logo,
   backend,
   creator,
@@ -87,17 +82,14 @@ export {
   attestra,
   yangtze,
   assl,
-  grocheap,
-  carrent,
-  jobit,
-  osProject as osProject,
   stock as stock,
   aiwaf as aiwaf,
   recmovie as recmovie,
   cybersecurity as cybersecurity,
-  grid4 as grid4,
   worldcup as worldcup,
   teslha as teslha,
   fintech as fintech,
   mlattacker as mlattacker,
+  winterpath,
+  polyfinancesDatathon,
 };

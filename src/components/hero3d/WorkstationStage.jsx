@@ -74,7 +74,7 @@ const WorkstationStage = () => {
           <a
             href="https://sketchfab.com/3d-models/gaming-desktop-pc-d1d8282c9916438091f11aeb28787b66"
             target="_blank"
-            rel="noreferrer"
+            rel="noopener noreferrer"
             className="underline underline-offset-2 hover:text-white"
           >
             “Gaming Desktop PC”
@@ -83,7 +83,7 @@ const WorkstationStage = () => {
           <a
             href="https://creativecommons.org/licenses/by/4.0/"
             target="_blank"
-            rel="noreferrer"
+            rel="noopener noreferrer"
             className="underline underline-offset-2 hover:text-white"
           >
             CC BY 4.0

@@ -3,6 +3,11 @@ export const content = ["./src/**/*.{js,jsx}"];
 export const mode = "jit";
 export const theme = {
   extend: {
+    fontFamily: {
+      display: ['"Space Grotesk"', "Inter", "ui-sans-serif", "system-ui", "sans-serif"],
+      sans: ["Inter", "ui-sans-serif", "system-ui", "-apple-system", '"Segoe UI"', "sans-serif"],
+      mono: ['"JetBrains Mono"', "ui-monospace", "SFMono-Regular", "Menlo", "monospace"],
+    },
     colors: {
       primary: "#050816",
       secondary: "#aaa6c3",

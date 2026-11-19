@@ -1,11 +1,12 @@
-import React from 'react'
-import { useState, useRef, Suspense } from 'react'
+/* eslint-disable react/no-unknown-property */
+import { useRef, Suspense } from 'react'
 import { Canvas, useFrame } from '@react-three/fiber'
 import { Points, PointMaterial, Preload } from '@react-three/drei'
 import * as random from 'maath/random/dist/maath-random.esm'
 const Stars = (props) => {
   const ref = useRef();
-  const sphere = random.inSphere(new Float32Array(5000), { radius: 1.2 })
+  // Length must be a multiple of 3 (x, y, z); 5000 left a partial point whose NaN broke bounding-sphere math.
+  const sphere = random.inSphere(new Float32Array(4998), { radius: 1.2 })
 
   useFrame((state, delta) => {
     ref.current.rotation.x -= delta / 10;

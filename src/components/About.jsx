@@ -1,4 +1,4 @@
-import React from "react";
+/* eslint-disable react/prop-types */
 import { Tilt } from "react-tilt";
 import { motion } from "framer-motion";
 import { useState } from 'react';
@@ -9,7 +9,6 @@ import { fadeIn, textVariant } from "../utils/motion";
 import Globe from 'react-globe.gl';
 import { KeyboardCanvas, OverviewModelCard, OverviewStage } from './overview3d';
 import WebGLBoundary from './canvas/WebGLBoundary';
-import Button from '../components/Button.jsx';
 import AppleFace from "../assets/AppleFace.png";
 import MeHello from "../assets/mehellowing.png";
 import cybersecurity from "../assets/cybersecurity.jpg"
@@ -22,11 +21,6 @@ const ServiceCard = ({ index, title, icon }) => (
             className='w-full green-pink-gradient p-[1px] rounded-[20px] shadow-card'
         >
             <div
-                options={{
-                    max: 45,
-                    scale: 1,
-                    speed: 450,
-                }}
                 className='bg-tertiary rounded-[20px] py-5 px-12 min-h-[280px] flex justify-evenly items-center flex-col'
             >
                 <img
