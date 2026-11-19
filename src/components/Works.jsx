@@ -107,13 +107,19 @@ const FeaturedProject = ({ project }) => (
   </article>
 );
 
-const ProjectCard = ({ index, project }) => {
+// After a filter click the section's one-shot reveal has already fired, so
+// cards that mount (or re-render) then would stay at "hidden" forever. Once the
+// user has filtered, each card animates itself in on mount instead.
+const MOUNT_REVEAL = { initial: "hidden", animate: "show" };
+
+const ProjectCard = ({ index, project, filtered }) => {
   const reveal = useSelfReveal();
+  const delay = filtered ? index * 0.06 : reveal ? 0 : index * 0.15;
 
   return (
     <motion.li
-      variants={fadeIn("up", "spring", reveal ? 0 : index * 0.15, 0.75)}
-      {...reveal}
+      variants={fadeIn("up", "spring", delay, 0.75)}
+      {...(filtered ? MOUNT_REVEAL : reveal)}
       className="list-none"
     >
       <MaybeTilt className="bg-tertiary p-5 rounded-2xl w-full h-full flex flex-col border border-white/5">
@@ -146,6 +152,12 @@ const ProjectCard = ({ index, project }) => {
 const Works = () => {
   const reveal = useSelfReveal();
   const [filter, setFilter] = useState("all");
+  const [filtered, setFiltered] = useState(false);
+
+  const selectFilter = (id) => {
+    setFilter(id);
+    setFiltered(true);
+  };
 
   const visible = filterProjects(projectsNewestFirst, filter);
   const [featured, ...rest] = visible;
@@ -182,7 +194,7 @@ const Works = () => {
               key={option.id}
               type="button"
               aria-pressed={active}
-              onClick={() => setFilter(option.id)}
+              onClick={() => selectFilter(option.id)}
               className={`px-4 py-2 rounded-full text-[13px] font-semibold border transition-colors ${
                 active
                   ? "bg-[#915EFF] border-[#915EFF] text-white"
@@ -206,7 +218,13 @@ const Works = () => {
 
       <ul className="mt-7 grid gap-7 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3">
         {cards.map((project, index) => (
-          <ProjectCard key={project.name} index={index} project={project} />
+          <ProjectCard
+            // Keyed by filter so every click remounts and replays the same reveal.
+            key={filtered ? `${filter}-${project.name}` : project.name}
+            index={index}
+            project={project}
+            filtered={filtered}
+          />
         ))}
       </ul>
     </>
