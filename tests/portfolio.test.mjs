@@ -10,12 +10,20 @@ const { sortNewestFirst, filterProjects, PROJECT_FILTERS } = await import(
   "../src/utils/projects.js"
 );
 
-test("WinterPath AI is the newest project and shown first", () => {
+test("Montréallion is the newest, featured project with a live demo; WinterPath AI follows", () => {
   const ordered = sortNewestFirst(projects);
-  assert.equal(ordered[0].name, "WinterPath AI");
-  assert.equal(ordered[0].demo_link, "https://winterpath.pages.dev/fr");
-  assert.equal(ordered[0].image, "winterpath.webp");
-  assert.ok(ordered[0].imageAlt.length > 20);
+  assert.equal(ordered[0].name, "Montréallion");
+  assert.equal(ordered[0].demo_link, "https://montreallion.vercel.app");
+  assert.equal(ordered[0].image, "montreallion.webp");
+  assert.ok(ordered[0].featured);
+  assert.equal(ordered[1].name, "WinterPath AI");
+  assert.equal(ordered[1].demo_link, "https://winterpath.pages.dev/fr");
+  assert.equal(ordered[1].image, "winterpath.webp");
+  for (const p of ordered.slice(0, 2)) assert.ok(p.imageAlt.length > 20);
+});
+
+test("only the newest project is featured", () => {
+  assert.deepEqual(projects.filter((p) => p.featured).map((p) => p.name), ["Montréallion"]);
 });
 
 test("existing projects are all kept", () => {
@@ -91,7 +99,7 @@ test("external links use https and nav targets exist", () => {
 });
 
 test("new image assets exist with case-exact file names", () => {
-  for (const file of ["winterpath.webp", "polyfinances-datathon.webp"]) {
+  for (const file of ["winterpath.webp", "polyfinances-datathon.webp", "montreallion.webp"]) {
     assert.ok(existsSync(new URL(`../src/assets/${file}`, import.meta.url)), file);
   }
 });
