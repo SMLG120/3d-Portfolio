@@ -45,6 +45,7 @@ import worldcup from "./worldcup.webp";
 import teslha from "./teslha.webp";
 import fintech from "./fintech.jpg";
 import winterpath from "./winterpath.webp";
+import montreallion from "./montreallion.webp";
 import polyfinancesDatathon from "./polyfinances-datathon.webp";
 import mlattacker from "./mlattacker.webp";
 
@@ -92,4 +93,5 @@ export {
   mlattacker as mlattacker,
   winterpath,
   polyfinancesDatathon,
+  montreallion,
 };

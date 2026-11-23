@@ -23,6 +23,7 @@ import {
   mlattacker,
   winterpath,
   polyfinancesDatathon,
+  montreallion,
 } from "../assets";
 
 export const navLinks = [
@@ -252,6 +253,30 @@ const education = [
 // categories drive the Projects filter: software | ai | security | 3d.
 const projects = [
   {
+    name: "Montréallion",
+    category: "Full-Stack Game / Open Data",
+    categories: ["software", "3d"],
+    problem:
+      "Trivia games reward the most obvious answer; a Montréal quiz should reward knowing the city's less-travelled corners.",
+    description:
+      "Bilingual (EN/FR) Montréal rarity trivia game: seven open-ended questions, 25 seconds each, and the rarer a valid answer, the more it scores (10–100). The server owns the timer and validates answers with accent- and typo-tolerant matching (no LLM), keeps the answer list off the browser until a question is answered, and freezes each day's scores so the daily leaderboard is fair. Includes Daily, Unlimited and Party modes, an admin review queue, and a stdlib-only Python ETL that turns open data into questions held for human review.",
+    outcome:
+      "Live on Vercel with Neon Postgres, serving 49 reviewed questions; unit, database and Playwright end-to-end tests run in GitHub Actions CI.",
+    tags: [
+      { name: "Next.js 16 / React 19 / TypeScript", color: "blue-text-gradient" },
+      { name: "PostgreSQL (Neon) / Zod", color: "green-text-gradient" },
+      { name: "Python ETL / Open Data", color: "pink-text-gradient" },
+      { name: "Vitest / Playwright / Vercel", color: "orange-text-gradient" },
+    ],
+    image: montreallion,
+    imageAlt:
+      "Montréallion home page: the Montréallion logo above a seven-stop métro line, with “Today's line” and “Unlimited” cards each offering a Start ride button.",
+    source_code_link: "https://github.com/SMLG120/montreallion",
+    demo_link: "https://montreallion.vercel.app",
+    projectDate: "2026-11-21",
+    featured: true,
+  },
+  {
     name: "WinterPath AI",
     category: "AI / Geospatial Engineering / Full-Stack Development",
     categories: ["software", "ai"],
@@ -273,7 +298,6 @@ const projects = [
     source_code_link: "https://github.com/SMLG120/WinterPathAi",
     demo_link: "https://winterpath.pages.dev/fr",
     projectDate: "2026-11-10",
-    featured: true,
   },
   {
     name: "AI-WAF — AI-Powered Web Application Firewall",
