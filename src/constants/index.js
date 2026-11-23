@@ -410,6 +410,8 @@ const projects = [
       { name: "TypeScript / Zod", color: "pink-text-gradient" },
     ],
     image: teslha,
+    imageAlt:
+      "TeslHa showroom home page: the headline “Engineering the electric future” beside a red 3D Roadster, with the Roadster selected in the vehicle picker.",
     source_code_link: "https://github.com/SMLG120/TeslHa",
     projectDate: "2026-11-07",
     demo_link: "https://teslha.onrender.com",
