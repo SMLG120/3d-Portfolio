@@ -392,8 +392,11 @@ const projects = [
       { name: "MongoDB / Mongoose", color: "green-text-gradient" },
       { name: "Inngest / Better Auth", color: "pink-text-gradient" },
     ],
+    outcome: "Live demo deployed on Vercel; create a free account to try the watchlist.",
     image: stock,
     source_code_link: "https://github.com/SMLG120/Stock-App-Tracker",
+    demo_link: "https://ascent-stock-app-tracker.vercel.app",
+    demo_note: "Sign-up required",
     projectDate: "2026-01-27",
   },
   {
