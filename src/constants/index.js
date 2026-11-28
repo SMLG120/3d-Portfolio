@@ -376,8 +376,11 @@ const projects = [
       { name: "Next.js / TypeScript", color: "green-text-gradient" },
       { name: "XGBoost / Monte Carlo", color: "pink-text-gradient" },
     ],
+    outcome: "Live demo: Next.js frontend on Vercel, FastAPI prediction API on Render.",
     image: worldcup,
     source_code_link: "https://github.com/SMLG120/World-Cup-Intelligence-Platform",
+    demo_link: "https://world-cup-intelligence-platform.vercel.app/predict",
+    demo_note: "Free-tier API may take up to a minute to wake up",
     projectDate: "2026-06-04",
   },
   {
